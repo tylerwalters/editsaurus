@@ -14,31 +14,30 @@ module.exports = function(grunt) {
 		sass: {
 			dist: {
 				files: {
-					'app/css/style.css': 'app/css/style.scss'
+					'app/css/style.css': 'app/css/sass/style.scss'
 				}
 			}
 		},
 		uglify: {
-			options: {
-				banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
-			},
-			css: {
-				files: {
-					'dist/css/style.min.css': ['<%= concat.css.dest %>']
-				}
-			},
-			js: {
+			minify: {
 				files: {
 					'dist/js/script.min.js': ['<%= concat.js.dest %>']
 				}
 			}
 		}, 
+		cssmin: {
+			minify: {
+				files: {
+					'dist/css/style.min.css': ['<%= concat.css.dest %>']
+				}
+			}
+		},
 		jshint: {
 			files: ['Gruntfile.js', 'app/js/*.js']
 		},
 		watch: {
 			css: {
-				files: ['<%= sass.files %>'],
+				files: ['app/css/sass/*.scss'],
 				tasks: ['sass']
 			},
 			js: {
@@ -49,10 +48,11 @@ module.exports = function(grunt) {
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 
-	grunt.registerTask('deploy', ['jshint', 'sass', 'concat', 'uglify']);
+	grunt.registerTask('build', ['jshint', 'sass', 'concat', 'uglify', 'cssmin']);
 };

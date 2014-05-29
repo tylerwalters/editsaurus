@@ -1,0 +1,15 @@
+// _typography.scss
+
+html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
+	font-family: 'Merriweather', serif;
+}
+
+h1, .h1 {
+	font-family: 'Merriweather', serif;
+	font-weight: bold;
+}
+
+h2, .h2 {
+	font-family: 'test', serif;
+	font-weight: bold;
+}
