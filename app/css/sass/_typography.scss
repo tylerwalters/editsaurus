@@ -7,9 +7,10 @@ html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
 h1, .h1 {
 	font-family: 'Merriweather', serif;
 	font-weight: bold;
+	font-size: 1.6em;
+	@include breakpoint(md) { font-size: 2em; }
 }
 
-h2, .h2 {
-	font-family: 'test', serif;
-	font-weight: bold;
+.adverb {
+	background-color: #fff;
 }

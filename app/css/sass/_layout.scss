@@ -1,0 +1,15 @@
+// _layout.scss
+
+.main-content {
+	padding-top: 80px;
+	background-color: #f2edde;
+}
+
+.main-content .content-box {
+	padding: 0 2em;
+}
+
+.writing-check-input {
+	height: 200px;
+	@include breakpoint(md) { height: 400px; }
+}
