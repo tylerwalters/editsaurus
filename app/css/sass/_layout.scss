@@ -1,12 +1,19 @@
 // _layout.scss
 
+$main-bg-color: #f2edde;
+
 .main-content {
-	padding-top: 80px;
-	background-color: #f2edde;
+	padding-top: 70px;
 }
 
-.main-content .content-box {
-	padding: 0 2em;
+.input-column {
+	background-color: $main-bg-color;
+	padding: 1em 2em;
+}
+
+.output-column {
+	background-color: lighten( $main-bg-color, 4% );
+	padding: 2em 2em;
 }
 
 .writing-check-input {

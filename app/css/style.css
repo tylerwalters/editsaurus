@@ -4,11 +4,15 @@
   box-sizing: border-box; }
 
 .main-content {
-  padding-top: 80px;
-  background-color: #f2edde; }
+  padding-top: 70px; }
 
-.main-content .content-box {
-  padding: 0 2em; }
+.input-column {
+  background-color: #f2edde;
+  padding: 1em 2em; }
+
+.output-column {
+  background-color: #f8f5ed;
+  padding: 2em 2em; }
 
 .writing-check-input {
   height: 200px; }

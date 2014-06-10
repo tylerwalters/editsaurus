@@ -16,7 +16,7 @@
 
 	function checkText(text) {
 		text = text.replace(/\r?\n/g, '<br />');
-		text = text.replace(/\w*ly\b/g, '<span class="adverb">$&</span>');
+		text = text.replace(/\w*ly\b/g, '<span class="adverb" title="This may be an unnecessary adverb.">$&</span>');
 		return text;
 	}
 })();
