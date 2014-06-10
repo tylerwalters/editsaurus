@@ -15,9 +15,8 @@
 	});
 
 	function checkText(text) {
-		console.log('text: ' + text);
+		text = text.replace(/\r?\n/g, '<br />');
 		text = text.replace(/\w*ly\b/g, '<span class="adverb">$&</span>');
-		console.log('text: ' + text);
 		return text;
 	}
 })();
