@@ -18,6 +18,16 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		jade: {
+			compile: {
+				options: {
+					pretty: true
+				},
+				files: {
+					"app/index.html": "app/jade/index.jade"
+				}
+			}
+		},
 		uglify: {
 			minify: {
 				files: {
@@ -43,6 +53,10 @@ module.exports = function(grunt) {
 			js: {
 				files: ['<%= jshint.files %>'],
 				tasks: ['jshint']
+			},
+			html: {
+				files: ['app/jade/*.jade'],
+				tasks: ['jade']
 			}
 		}
 	});
@@ -53,6 +67,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-jade');
 
 	grunt.registerTask('build', ['jshint', 'sass', 'concat', 'uglify', 'cssmin']);
 };

@@ -1,0 +1,83 @@
+doctype html
+html
+	head
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		meta(name='description', content='A tool to check creative and technical writing for potential improvements.')
+		
+		title Writing Check by Tyler Walters
+
+		link(rel='stylesheet', href='http://yui.yahooapis.com/pure/0.5.0/pure-min.css')
+		<!--[if lte IE 8]> 
+		link(rel='stylesheet', href='http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css') 
+		<![endif]-->
+		<!--[if gt IE 8]><!--> 
+		link(rel='stylesheet', href='http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css') 
+		<!--<![endif]-->
+		link(rel='stylesheet', href='css/style.css')
+		link(rel='stylesheet', href='http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css')
+		link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Merriweather:400,700,400italic')
+
+	body
+		div.pure-menu.pure-menu-open.pure-menu-horizontal.pure-menu-fixed
+			a.pure-menu-heading(href='') 
+				h1 Writing Check
+
+			ul
+				li.pure-menu-selected
+					a(href='#check') 
+						i.fa.fa-pencil 
+						| &nbsp; Check Writing
+				li
+					a(href='#about') 
+						i.fa.fa-book 
+						| &nbsp; About
+
+		div.pure-g.main-content
+			div.pure-u-1.pure-u-md-1-2.input-column
+				div.content-box
+
+					form#writing-check-form.pure-form.pure-form.stacked
+						fieldset
+							label Enter your text copy:
+							textarea#writing-check-input.writing-check-input.pure-input-1(name='writing-check-input', required)
+
+							div.pure-g
+								div.pure-u-1.pure-u-sm-1-2.pure-u-md-1-3
+									label.pure-checkbox(for='weasel-words')
+										input#weasel-words(type='checkbox') 
+										| Adverbs
+									label.pure-checkbox(for='weasel-words')
+										input#weasel-words(type='checkbox')
+										| Filler Words
+
+								div.pure-u-1.pure-u-sm-1-2.pure-u-md-1-3
+									label.pure-checkbox(for='weasel-words')
+										input#weasel-words(type='checkbox')
+										| Passive Voice
+									label.pure-checkbox(for='weasel-words')
+										input#weasel-words(type='checkbox')
+										| Point Of View Distance Check
+
+								div.pure-u-1.pure-u-sm-1-2.pure-u-md-1-3
+									label.pure-checkbox(for='weasel-words')
+										input#weasel-words(type='checkbox')
+										| Lexical Illusions
+									label.pure-checkbox(for='weasel-words')
+										input#weasel-words(type='checkbox')
+										| Commonly Misused Words
+
+							button#writing-check-button.pure-button.pure-button-primary Submit
+
+			div.pure-u-1.pure-u-md-1-2.output-column
+				div.content-box
+
+					div#writing-check-output
+						p Checked text copy will go here.
+
+		div.pure-g
+
+		script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+		script(src='js/script.js')
+
+		
