@@ -14,6 +14,7 @@ html
 		<!--[if gt IE 8]><!--> 
 		link(rel='stylesheet', href='http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css') 
 		<!--<![endif]-->
+		link(rel='stylesheet', href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css')
 		link(rel='stylesheet', href='css/style.css')
 		link(rel='stylesheet', href='http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css')
 		link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Merriweather:400,700,400italic')
@@ -29,43 +30,52 @@ html
 						i.fa.fa-pencil 
 						| &nbsp; Check Writing
 				li
-					a(href='#about') 
+					a(href='#definitions') 
 						i.fa.fa-book 
+						| &nbsp; Definitions
+				li
+					a(href='#about') 
+						i.fa.fa-info 
 						| &nbsp; About
 
 		div.pure-g.main-content
 			div.pure-u-1.pure-u-md-1-2.input-column
 				div.content-box
+					
+					p Enter your text copy:
 
 					form#writing-check-form.pure-form.pure-form.stacked
 						fieldset
-							label Enter your text copy:
 							textarea#writing-check-input.writing-check-input.pure-input-1(name='writing-check-input', required)
 
 							div.pure-g
-								div.pure-u-1.pure-u-sm-1-2.pure-u-md-1-3
-									label.pure-checkbox(for='check-adverb')
-										input#check-adverb(type='checkbox', value='adverb') 
+								div.pure-u-1.pure-u-sm-1-2.check-box-options
+									label.pure-checkbox.adverb(for='check-adverb')
+										input#check-adverb(type='checkbox', value='adverb')
+										i.fa.fa-question-circle.fa-inverse.pull-right(title='Check for adverbs that could be replaced with stronger verbs.')
 										| &nbsp; Adverbs
-									label.pure-checkbox(for='check-filler')
+									label.pure-checkbox.filler-words(for='check-filler')
 										input#check-filler(type='checkbox', value='fillerWords')
+										i.fa.fa-question-circle.fa-inverse.pull-right(title='Check for adverbs that could be replaced with stronger verbs.')
 										| &nbsp; Filler Words
-
-								div.pure-u-1.pure-u-sm-1-2.pure-u-md-1-3
-									label.pure-checkbox(for='check-passive')
+									label.pure-checkbox.passive-voice(for='check-passive')
 										input#check-passive(type='checkbox', value='passiveVoice')
+										i.fa.fa-question-circle.fa-inverse.pull-right(title='Check for adverbs that could be replaced with stronger verbs.')
 										| &nbsp; Passive Voice
-									label.pure-checkbox(for='check-pov')
-										input#check-pov(type='checkbox', value='pointOfView')
-										| &nbsp; Point Of View Distance Check
 
-								div.pure-u-1.pure-u-sm-1-2.pure-u-md-1-3
-									label.pure-checkbox(for='check-lexical')
+								div.pure-u-1.pure-u-sm-1-2.check-box-options
+									label.pure-checkbox.lexical-illusions(for='check-lexical')
 										input#check-lexical(type='checkbox', value='lexicalIllusions')
+										i.fa.fa-question-circle.fa-inverse.pull-right(title='Check for adverbs that could be replaced with stronger verbs.')
 										| &nbsp; Lexical Illusions
-									label.pure-checkbox(for='check-misused')
+									label.pure-checkbox.misused-words(for='check-misused')
 										input#check-misused(type='checkbox', value='misusedWords')
-										| &nbsp; Commonly Misused Words
+										i.fa.fa-question-circle.fa-inverse.pull-right(title='Check for adverbs that could be replaced with stronger verbs.')
+										| &nbsp; Common Misused Words
+									label.pure-checkbox.point-of-view(for='check-pov')
+										input#check-pov(type='checkbox', value='pointOfView')
+										i.fa.fa-question-circle.fa-inverse.pull-right(title='Check for adverbs that could be replaced with stronger verbs.')
+										| &nbsp; Point Of View Distance
 
 							button#writing-check-button.pure-button.pure-button-primary Submit
 
@@ -78,6 +88,7 @@ html
 		div.pure-g
 
 		script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+		script(src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js')
 		script(src='js/script.js')
 
 		

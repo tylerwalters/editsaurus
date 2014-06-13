@@ -12,7 +12,7 @@
 
 .output-column {
   background-color: #f8f5ed;
-  padding: 2em 2em; }
+  padding: 1em 2em; }
 
 .writing-check-input {
   height: 200px; }
@@ -21,15 +21,47 @@
       height: 400px; } }
 
 html, button, input, select, textarea, .pure-g [class*="pure-u"] {
-  font-family: 'Merriweather', serif; }
+  font-family: "Merriweather", serif; }
 
 h1, .h1 {
-  font-family: 'Merriweather', serif;
+  font-family: "Merriweather", serif;
   font-weight: bold;
   font-size: 1.6em; }
   @media (min-width: 48em) {
     h1, .h1 {
       font-size: 2em; } }
 
+.pure-form .check-box-options .pure-checkbox {
+  padding: .3em;
+  margin: .5em .2em; }
+
+.check-box-options i {
+  background-color: #333;
+  border-radius: 2px;
+  padding: 0 2px;
+  line-height: 19px; }
+
 .adverb {
-  background-color: #fff; }
+  background-color: #1abc9c; }
+
+.filler-words {
+  background-color: #2ecc71; }
+
+.passive-voice {
+  background-color: #3498db; }
+
+.point-of-view {
+  background-color: #9b59b6; }
+
+.lexical-illusions {
+  background-color: #e67e22; }
+
+.misused-words {
+  background-color: #e74c3c; }
+
+.ui-tooltip {
+  background-color: #f8f5ed;
+  padding: 10px 20px;
+  font: normal 0.8em "Merriweather", serif;
+  box-shadow: 0 0 7px black;
+  border: 1px solid #ece5cf; }

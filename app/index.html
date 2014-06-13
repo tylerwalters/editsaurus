@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css"><![endif]-->
     <!--[if gt IE 8]><!--> 
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css"><!--<![endif]-->
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Merriweather:400,700,400italic">
@@ -18,39 +19,38 @@
         <h1>Writing Check</h1></a>
       <ul>
         <li class="pure-menu-selected"><a href="#check"><i class="fa fa-pencil"></i>&nbsp; Check Writing</a></li>
-        <li><a href="#about"><i class="fa fa-book"></i>&nbsp; About</a></li>
+        <li><a href="#definitions"><i class="fa fa-book"></i>&nbsp; Definitions</a></li>
+        <li><a href="#about"><i class="fa fa-info"></i>&nbsp; About</a></li>
       </ul>
     </div>
     <div class="pure-g main-content">
       <div class="pure-u-1 pure-u-md-1-2 input-column">
         <div class="content-box">
+          <p>Enter your text copy:</p>
           <form id="writing-check-form" class="pure-form pure-form stacked">
             <fieldset>
-              <label>Enter your text copy:</label>
               <textarea id="writing-check-input" name="writing-check-input" required class="writing-check-input pure-input-1"></textarea>
               <div class="pure-g">
-                <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3">
-                  <label for="check-adverb" class="pure-checkbox">
-                    <input id="check-adverb" type="checkbox" value="adverb">&nbsp; Adverbs
+                <div class="pure-u-1 pure-u-sm-1-2 check-box-options">
+                  <label for="check-adverb" class="pure-checkbox adverb">
+                    <input id="check-adverb" type="checkbox" value="adverb"><i title="Check for adverbs that could be replaced with stronger verbs." class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Adverbs
                   </label>
-                  <label for="check-filler" class="pure-checkbox">
-                    <input id="check-filler" type="checkbox" value="fillerWords">&nbsp; Filler Words
+                  <label for="check-filler" class="pure-checkbox filler-words">
+                    <input id="check-filler" type="checkbox" value="fillerWords"><i title="Check for adverbs that could be replaced with stronger verbs." class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Filler Words
                   </label>
-                </div>
-                <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3">
-                  <label for="check-passive" class="pure-checkbox">
-                    <input id="check-passive" type="checkbox" value="passiveVoice">&nbsp; Passive Voice
-                  </label>
-                  <label for="check-pov" class="pure-checkbox">
-                    <input id="check-pov" type="checkbox" value="pointOfView">&nbsp; Point Of View Distance Check
+                  <label for="check-passive" class="pure-checkbox passive-voice">
+                    <input id="check-passive" type="checkbox" value="passiveVoice"><i title="Check for adverbs that could be replaced with stronger verbs." class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Passive Voice
                   </label>
                 </div>
-                <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3">
-                  <label for="check-lexical" class="pure-checkbox">
-                    <input id="check-lexical" type="checkbox" value="lexicalIllusions">&nbsp; Lexical Illusions
+                <div class="pure-u-1 pure-u-sm-1-2 check-box-options">
+                  <label for="check-lexical" class="pure-checkbox lexical-illusions">
+                    <input id="check-lexical" type="checkbox" value="lexicalIllusions"><i title="Check for adverbs that could be replaced with stronger verbs." class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Lexical Illusions
                   </label>
-                  <label for="check-misused" class="pure-checkbox">
-                    <input id="check-misused" type="checkbox" value="misusedWords">&nbsp; Commonly Misused Words
+                  <label for="check-misused" class="pure-checkbox misused-words">
+                    <input id="check-misused" type="checkbox" value="misusedWords"><i title="Check for adverbs that could be replaced with stronger verbs." class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Common Misused Words
+                  </label>
+                  <label for="check-pov" class="pure-checkbox point-of-view">
+                    <input id="check-pov" type="checkbox" value="pointOfView"><i title="Check for adverbs that could be replaced with stronger verbs." class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Point Of View Distance
                   </label>
                 </div>
               </div>
@@ -69,6 +69,7 @@
     </div>
     <div class="pure-g"></div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

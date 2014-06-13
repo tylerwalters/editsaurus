@@ -5,6 +5,8 @@
 	/* global $ */
 	/* global console */
 
+	$( document ).tooltip();
+
 	$('#writing-check-button').click(function(e) {
 		e.preventDefault();
 
