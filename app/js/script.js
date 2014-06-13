@@ -19,7 +19,7 @@
 
 	function checkText(text, choices) {
 		text = text.replace(/\r?\n/g, '<br />');
-		for (var i = 0; i < choices.length; i++) {
+		for (var i = 0, max = choices.length; i < max; i++) {
 			text = text.replace(checkOptions[choices[i]].regex, '<span class="' + checkOptions[choices[i]].name + '" title="' + checkOptions[choices[i]].title + '">$&</span>');
 		}
 		return text;
