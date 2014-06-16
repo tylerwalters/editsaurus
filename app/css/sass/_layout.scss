@@ -6,17 +6,33 @@ $main-bg-color: #f2edde;
 	padding-top: 70px;
 }
 
+.content-box {
+	padding: 1em 2em;
+}
+
 .input-column {
 	background-color: $main-bg-color;
-	padding: 1em 2em;
 }
 
 .output-column {
 	background-color: lighten( $main-bg-color, 4% );
-	padding: 1em 2em;
 }
 
 .writing-check-input {
 	height: 200px;
 	@include breakpoint(md) { height: 400px; }
+}
+
+.definitions-list .content-box {
+	padding-right: 0;
+}
+
+.definitions-list ul {
+	list-style: none;
+	padding: 0;
+}
+
+.definitions-list ul li {
+	padding: 1em;
+	cursor: pointer;
 }
