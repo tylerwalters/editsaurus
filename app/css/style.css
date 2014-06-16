@@ -22,7 +22,7 @@
       height: 400px; } }
 
 .definitions-list .content-box {
-  padding-right: 0; }
+  padding: 0; }
 
 .definitions-list ul {
   list-style: none;
@@ -31,6 +31,12 @@
 .definitions-list ul li {
   padding: 1em;
   cursor: pointer; }
+
+.description {
+  display: none; }
+
+.description.active {
+  display: block; }
 
 html, button, input, select, textarea, .pure-g [class*="pure-u"] {
   font-family: "Merriweather", serif; }

@@ -24,7 +24,7 @@ $main-bg-color: #f2edde;
 }
 
 .definitions-list .content-box {
-	padding-right: 0;
+	padding: 0;
 }
 
 .definitions-list ul {
@@ -36,3 +36,12 @@ $main-bg-color: #f2edde;
 	padding: 1em;
 	cursor: pointer;
 }
+
+.description {
+	display: none;
+}
+
+.description.active {
+	display: block;
+}
+
