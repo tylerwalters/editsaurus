@@ -3,6 +3,9 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
+.pure-menu.pure-menu-open {
+  background-color: #f7f6f4; }
+
 .main-content {
   padding-top: 70px; }
 
@@ -30,15 +33,13 @@
   margin: 0; }
 
 .definitions-list ul li {
-  padding: 1.2em 1em;
+  padding: 1.2em 2em;
   cursor: pointer;
   -moz-box-shadow: inset -3px 0px 2px 0px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: inset -3px 0px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: inset -3px 0px 2px 0px rgba(0, 0, 0, 0.5); }
 
 .definitions-list ul li.active {
-  padding: 1.2em 1em;
-  cursor: pointer;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none; }
@@ -49,8 +50,24 @@
 .description.active {
   display: block; }
 
+.about-copy {
+  background-color: #f8f5ed; }
+
+.author-copy {
+  background-color: #f2edde; }
+
 html, button, input, select, textarea, .pure-g [class*="pure-u"] {
   font-family: "Merriweather", serif; }
+
+body {
+  color: #160a06;
+  line-height: 1.4; }
+
+.content-box a:link, .content-box a:visited {
+  color: #2251af; }
+
+.content-box a:hover {
+  color: #1a3d84; }
 
 h1, .h1 {
   font-family: "Merriweather", serif;
@@ -59,6 +76,12 @@ h1, .h1 {
   @media (min-width: 48em) {
     h1, .h1 {
       font-size: 2em; } }
+
+h2, .h2 {
+  color: #222; }
+
+.pure-menu .pure-menu-heading {
+  color: #160a06; }
 
 .pure-form .check-box-options .pure-checkbox {
   padding: .3em;
@@ -93,4 +116,4 @@ h1, .h1 {
   padding: 10px 20px;
   font: normal 0.8em "Merriweather", serif;
   box-shadow: 0 0 7px black;
-  border: 1px solid #ece5cf; }
+  border: 1px solid #e1d5b2; }

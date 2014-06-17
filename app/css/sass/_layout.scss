@@ -1,6 +1,8 @@
 // _layout.scss
 
-$main-bg-color: #f2edde;
+.pure-menu.pure-menu-open {
+	background-color: #f7f6f4;
+}
 
 .main-content {
 	padding-top: 70px;
@@ -15,7 +17,7 @@ $main-bg-color: #f2edde;
 }
 
 .output-column {
-	background-color: lighten( $main-bg-color, 4% );
+	background-color: $main-bg-color-lighter;
 }
 
 .writing-check-input {
@@ -34,7 +36,7 @@ $main-bg-color: #f2edde;
 }
 
 .definitions-list ul li {
-	padding: 1.2em 1em;
+	padding: 1.2em 2em;
 	cursor: pointer;
 	-moz-box-shadow:    inset -3px 0px 2px 0px rgba(0,0,0,0.5);
   -webkit-box-shadow: inset -3px 0px 2px 0px rgba(0,0,0,0.5);
@@ -42,8 +44,6 @@ $main-bg-color: #f2edde;
 }
 
 .definitions-list ul li.active {
-	padding: 1.2em 1em;
-	cursor: pointer;
 	-moz-box-shadow:    none;
   -webkit-box-shadow: none;
   box-shadow:         none;
@@ -57,3 +57,10 @@ $main-bg-color: #f2edde;
 	display: block;
 }
 
+.about-copy {
+	background-color: $main-bg-color-lighter;
+}
+
+.author-copy {
+	background-color: $main-bg-color;
+}

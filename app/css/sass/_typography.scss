@@ -4,11 +4,32 @@ html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
 	font-family: $body-font;
 }
 
+body {
+	color: $body-color;
+	line-height: 1.4;
+}
+
+.content-box a:link, .content-box a:visited {
+	color: $link-color;
+}
+
+.content-box a:hover {
+	color: $link-hover;
+}
+
 h1, .h1 {
 	font-family: $body-font;
 	font-weight: bold;
 	font-size: 1.6em;
 	@include breakpoint(md) { font-size: 2em; }
+}
+
+h2, .h2 {
+	color: #222;
+}
+
+.pure-menu .pure-menu-heading {
+	color: $body-color;
 }
 
 .pure-form .check-box-options .pure-checkbox {
