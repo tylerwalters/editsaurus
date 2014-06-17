@@ -26,11 +26,22 @@
 
 .definitions-list ul {
   list-style: none;
-  padding: 0; }
+  padding: 0;
+  margin: 0; }
 
 .definitions-list ul li {
-  padding: 1em;
-  cursor: pointer; }
+  padding: 1.2em 1em;
+  cursor: pointer;
+  -moz-box-shadow: inset -3px 0px 2px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: inset -3px 0px 2px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: inset -3px 0px 2px 0px rgba(0, 0, 0, 0.5); }
+
+.definitions-list ul li.active {
+  padding: 1.2em 1em;
+  cursor: pointer;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
 
 .description {
   display: none; }
