@@ -34,4 +34,17 @@
 		misusedWords: {name: 'misused-words', regex: /\b(their|they're|there|your|you're|its|it's|whose|who's)\b/g, title: 'This word is commonly mistaken for another. Double check that the correct word is used.'}
 	};
 
+	$('.definitions-list ul li').click(function() {
+		$('.definitions-list ul li').each(function() {
+			$(this).removeClass('active');
+		});
+		var active = $(this).attr('class');
+		$(this).addClass('active');
+		$('.description').each(function() {
+			$(this).removeClass('active');
+		});
+		$('.' + active + '-description').addClass('active');
+		$('.definitions-description').attr('class', 'pure-u-1 pure-u-md-2-3 definitions-description ' + active);
+	});
+
 })();
