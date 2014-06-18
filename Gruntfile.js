@@ -26,13 +26,12 @@ module.exports = function(grunt) {
 				files: {
 					"app/index.html": "app/jade/index.jade"
 				}
-			},
-			build: {
-				options: {
-					pretty: true
-				},
+			}
+		},
+		processhtml: {
+			dist: {
 				files: {
-					"dist/index.html": "app/jade/index.jade"
+					'dist/index.html': 'app/index.html'
 				}
 			}
 		},
@@ -76,6 +75,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-jade');
+	grunt.loadNpmTasks('grunt-processhtml');
 
-	grunt.registerTask('build', ['jshint', 'sass', 'concat', 'uglify', 'cssmin', 'jade:build']);
+	grunt.registerTask('build', ['jshint', 'sass', 'concat', 'uglify', 'cssmin', 'processhtml']);
 };
