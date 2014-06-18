@@ -8,6 +8,8 @@ It outputs the writing sample with each of the checked options highlighted where
 
 The article [3 shell scripts to improve your writing, or "My Ph.D. advisor rewrote himself in bash." by Matt Might](http://matt.might.net/articles/shell-scripts-for-passive-voice-weasel-words-duplicates/) inspired this website. I have expanded on it to include other things I thought would be helpful. 
 
+You can find this tool live at: [http://tylerwalters.com/writing-check/](http://tylerwalters.com/writing-check/)
+
 ## Future Features
 
 There are some addtional features I would like to implement in the future if I get the time. The list includes:
