@@ -33,16 +33,12 @@
   margin: 0; }
 
 .definitions-list ul li {
-  padding: 1.2em 2em;
+  padding: 1.3em 2em;
   cursor: pointer;
-  -moz-box-shadow: inset -3px 0px 2px 0px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: inset -3px 0px 2px 0px rgba(0, 0, 0, 0.5);
-  box-shadow: inset -3px 0px 2px 0px rgba(0, 0, 0, 0.5); }
+  border-right: 2px solid rgba(0, 0, 0, 0.2); }
 
 .definitions-list ul li.active {
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
-  box-shadow: none; }
+  border-right: none; }
 
 .description {
   display: none; }
