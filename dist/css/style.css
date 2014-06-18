@@ -3,12 +3,20 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
+.pure-menu.pure-menu-open {
+  background-color: #f7f6f4; }
+
 .main-content {
-  padding-top: 80px;
+  padding-top: 70px; }
+
+.content-box {
+  padding: 1em 2em; }
+
+.input-column {
   background-color: #f2edde; }
 
-.main-content .content-box {
-  padding: 0 2em; }
+.output-column {
+  background-color: #f8f5ed; }
 
 .writing-check-input {
   height: 200px; }
@@ -16,16 +24,96 @@
     .writing-check-input {
       height: 400px; } }
 
+.definitions-list .content-box {
+  padding: 0; }
+
+.definitions-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+.definitions-list ul li {
+  padding: 1.2em 2em;
+  cursor: pointer;
+  -moz-box-shadow: inset -3px 0px 2px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: inset -3px 0px 2px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: inset -3px 0px 2px 0px rgba(0, 0, 0, 0.5); }
+
+.definitions-list ul li.active {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
+
+.description {
+  display: none; }
+
+.description.active {
+  display: block; }
+
+.about-copy {
+  background-color: #f8f5ed; }
+
+.author-copy {
+  background-color: #f2edde; }
+
 html, button, input, select, textarea, .pure-g [class*="pure-u"] {
-  font-family: 'Merriweather', serif; }
+  font-family: "Merriweather", serif; }
+
+body {
+  color: #160a06;
+  line-height: 1.4; }
+
+.content-box a:link, .content-box a:visited {
+  color: #2251af; }
+
+.content-box a:hover {
+  color: #1a3d84; }
 
 h1, .h1 {
-  font-family: 'Merriweather', serif;
+  font-family: "Merriweather", serif;
   font-weight: bold;
   font-size: 1.6em; }
   @media (min-width: 48em) {
     h1, .h1 {
       font-size: 2em; } }
 
+h2, .h2 {
+  color: #222; }
+
+.pure-menu .pure-menu-heading {
+  color: #160a06; }
+
+.pure-form .check-box-options .pure-checkbox {
+  padding: .3em;
+  margin: .5em .2em; }
+
+.check-box-options i {
+  background-color: #333;
+  border-radius: 2px;
+  padding: 0 2px;
+  line-height: 19px; }
+
 .adverb {
-  background-color: #fff; }
+  background-color: #5ee6d4; }
+
+.filler-words {
+  background-color: #9af0b6; }
+
+.passive-voice {
+  background-color: #5ec3e0; }
+
+.pronoun {
+  background-color: #a285d7; }
+
+.lexical-illusions {
+  background-color: #d07e5a; }
+
+.misused-words {
+  background-color: #d45f74; }
+
+.ui-tooltip {
+  background-color: #f8f5ed;
+  padding: 10px 20px;
+  font: normal 0.8em "Merriweather", serif;
+  box-shadow: 0 0 7px black;
+  border: 1px solid #e1d5b2; }
