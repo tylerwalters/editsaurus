@@ -1,6 +1,12 @@
 {
   "name": "writing-check",
   "version": "0.1.0",
+  "homepage": "http://tylerwalters.com/writing-check/",
+  "author": {
+    "name": "Tyler Walters ",
+    "email": "tyler@tylerwalters.com",
+    "url": "http://tylerwalters.com"
+  },
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-watch": "^0.6.1",
