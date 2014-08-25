@@ -1,11 +1,17 @@
 {
-  "name": "writing-check",
-  "version": "0.1.0",
+  "name": "write-check",
+  "version": "0.0.2",
   "homepage": "http://write-check.tylerwalters.com",
   "author": {
     "name": "Tyler Walters ",
     "email": "tyler@tylerwalters.com",
     "url": "http://tylerwalters.com"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.8.5"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
