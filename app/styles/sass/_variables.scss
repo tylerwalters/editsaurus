@@ -1,0 +1,11 @@
+// _variables.scss
+
+$main-bg-color: #f2edde;
+$main-bg-color-lighter: lighten($main-bg-color, 4%);
+$main-bg-color-darker: darken($main-bg-color, 12%);
+
+$body-font: 'Merriweather', serif;
+$body-color: #160a06;
+
+$link-color: #2251af;
+$link-hover: darken($link-color, 10%);
