@@ -1,3 +1,5 @@
 node_modules
 .idea/
 app/lib
+sample-text.md
+.sass-cache
