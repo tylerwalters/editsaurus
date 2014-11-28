@@ -13,28 +13,24 @@ gulp.task('lint', function() {
 		.pipe(jshint.reporter('jshint-stylish'));
 });
 
-gulp.task('stylus', function() {
-	var stylus 	= require('gulp-stylus'),
-			nib		  = require('nib');
+gulp.task('sass', function() {
+	var sass 	= require('gulp-sass');
 
-	return gulp.src('public/styles/stylus/main.styl')
-		.pipe(stylus({use: [nib()]}))
-		.pipe(gulp.dest('./public/styles'));
+	return gulp.src('app/styles/sass/main.scss')
+		.pipe(sass())
+		.pipe(gulp.dest('./app/styles'));
 });
 
 gulp.task('css-min', function() {
-	var stylus 		= require('gulp-stylus'),
-			nib			  = require('nib'),
+	var sass 		= require('gulp-sass'),
 			minifycss  = require('gulp-minify-css');
 
-	return gulp.src('public/styles/stylus/main.styl')
-		.pipe(stylus({use: [nib()]}))
+	return gulp.src('app/styles/sass/main.styl')
+		.pipe(sass())
 		.pipe(minifycss())
-		.pipe(gulp.dest('./public/styles'));
+		.pipe(gulp.dest('./app/styles'));
 });
 
-
-
-gulp.task('default', ['lint', 'stylus']);
+gulp.task('default', ['lint', 'sass']);
 
 console.timeEnd('Loading plugins');
