@@ -12,6 +12,18 @@
   padding: 1em 2em;
 }
 
+.input-box {
+  margin: 1em 2em;
+  padding: 1em;
+  background-color: $main-bg-color;
+}
+
+.input-box:focus {
+  background-color: $main-bg-color-lighter;
+  border: 1px solid $main-bg-color-darker;
+  outline: none;
+}
+
 .input-column {
   background-color: $main-bg-color;
 }
