@@ -1,10 +1,8 @@
 "use strict";
 
-angular.module('writeController').controller('writeController', ['$scope', function($scope) {
+app.controller('writeController', ['$scope', function($scope) {
 
 	$scope.selectedChecks = [];
-
-
 
 }]);
 
