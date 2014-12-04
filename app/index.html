@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="writeCheck">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,10 +26,10 @@
     </ul>
 </div>
 
-<div id="check" class="pure-g main-content">
+<div id="check" class="pure-g main-content" ng-controller="writeController">
     <div class="pure-u-1 pure-u-md-3-4 input-column">
-        <div class="input-box" contenteditable="true">
-            Replace with your text.
+        <div class="input-box" contenteditable="true" write-input>
+
         </div>
     </div>
     <div class="pure-u-1 pure-u-md-1-4 output-column">
@@ -83,7 +83,7 @@
                 <ul>
                     <li>-ly</li>
                 </ul>
-                <p>It is well known that Ernest Hemingway avoided adverbs. His minimalist style didn't have room for superfulous words. Steven King said, "I believe the road to hell is paved with adverbs, and I will shout it from the rooftops," in his book 'On Writing'. </p>
+                <p>It is well known that Ernest Hemingway avoided adverbs. His minimalist style didn't have room for superfluous words. Steven King said, "I believe the road to hell is paved with adverbs, and I will shout it from the rooftops," in his book 'On Writing'. </p>
                 <p>Adverbs tend to be unnecessary. They can be redundant, slow down the action, or amplify verbs that don't need to be amplified. You can often replace an adverb and the verb it modifies with a stronger verb or, if the verb is strong enough to stand alone anyway, remove the adverb and leave the verb intact.</p>
                 <p>Further reading: <a href="http://www.quickanddirtytips.com/education/grammar/how-to-eliminate-adverbs">How to Eliminate Adverbs</a></p>
             </div>
@@ -158,8 +158,11 @@
     </div>
 </div>
 
+<script src="lib/angular/angular.min.js"></script>
 <script src="app.js"></script>
-<script src="scripts/script.js"></script>
+<script src="scripts/writeCtrl.js"></script>
+<script src="scripts/writeDirective.js"></script>
+
 <script>
     var _gaq=[['_setAccount','UA-18903158-1'],['_trackPageview']];
     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
