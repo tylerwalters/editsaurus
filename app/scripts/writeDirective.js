@@ -22,7 +22,7 @@ app.directive('writeInput', [function () {
 				var check = checkOptions.adverb;
 
 				if (element.html().match(check.match)) {
-					var text = element.html().replace(check.replace, '<span class="adverb">$&</span>');
+					var text = element.html().replace(check.replace, '<span class="' + check.name + '">$&</span>');
 					element.html(text);
 				}
 			};
