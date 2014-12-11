@@ -67,6 +67,7 @@ html, button, input, select, textarea, .pure-g [class*="pure-u"] {
 
 body {
   color: #160a06;
+  background-color: #f8f5ed;
   line-height: 1.4; }
 
 .content-box a:link, .content-box a:visited {
