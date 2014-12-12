@@ -25,7 +25,6 @@ app.directive('writeInput', [function () {
 
 				for (i = 0; i < length; i++) {
 					var check = checkOptions[options[i]];
-					//if (element.html().match(/<(.*)>/gi))
 					if (element.html().match(check.replace)) {
 						var text = element.html().replace(check.replace, '<span class="' + check.name + '" title="' + check.title + '">$&</span>');
 						element.html(text);

@@ -2,19 +2,20 @@
 
 app.controller('writeController', ['$scope', function($scope) {
 
-	$scope.selectedChecks = [];
+	//$scope.options = ['adverbs', 'fillerWords', 'passiveVoice', 'misusedWords', 'pronouns'];
+	$scope.options = ['adverbs', 'fillerWords', 'passiveVoice', 'lexicalIllusions', 'misusedWords', 'pronouns'];
 
 }]);
 
 
 
-//(function(){
-//
-//	'use strict';
-//
-//	/* global $ */
-//	/* global console */
-//
+////(function(){
+////
+////	'use strict';
+////
+////	/* global $ */
+////	/* global console */
+////
 //	// text submit
 //	// Creates an array containing the check options, saves the submitted text to a variable, applies the changes to the text using checkText(), adds the edited text to the output section.
 //	$('#writing-check-button').click(function(e) {
@@ -31,7 +32,7 @@ app.controller('writeController', ['$scope', function($scope) {
 //		// Adds revised text to output section
 //		$('#writing-check-output').html(checkedText);
 //	});
-//
+////
 //	// checkText()
 //	// Accepts the submitted text and the selected check options as parameters. Applies selected choices to the text and returns the edited text for output.
 //	function checkText(text, choices) {
@@ -58,9 +59,9 @@ app.controller('writeController', ['$scope', function($scope) {
 //		// Returns edited text for output
 //		return text;
 //	}
-//
-//	// check options
-//	// Object holding the name, regular expression to matched, and title for each option that is checked against the submitted text.
+////
+////	// check options
+////	// Object holding the name, regular expression to matched, and title for each option that is checked against the submitted text.
 //	var checkOptions = {
 //		adverb: {name: 'adverb', regex: /\w*ly\b/gi, title: 'This adverb could be ommitted or replaced with a stronger verb.'},
 //		fillerWords: {name: 'filler-words', regex: /\b(very|several|some|many|most|few|vast|just|quite|often|various|a number of|really|so|that|and then|but)\b/gi, title: 'This word may be unnecessary and not add anything of value.'},
@@ -69,60 +70,60 @@ app.controller('writeController', ['$scope', function($scope) {
 //		misusedWords: {name: 'misused-words', regex: /\b(their|they're|there|your|you're|its|it's|whose|who's|accept|except|affect|effect|allusion|illusion|capital|capitol|climactic|climatic|elicit|illicit|emigrate|immigrate|principle|principal|than|then|to|too|two|lie|lay|set|sit|suppose to|use to|towards|anyways|could care less|intensive purposes)\b/gi, title: 'This word is commonly mistaken for another. Double check that the correct word is used.'},
 //		pronoun: {name: 'pronoun', regex: /\b(he|she|it|they|we|you|I|that|this)\b/gi, title: 'Double check that it is clear what this pronoun refers to and that you don\'t have too many close together.'}
 //	};
-//
-//	// Definitions functionality
-//	// Handles the definition switching and styling when new options are selected in the definitions section.
-//	$('.definitions-list ul li').click(function() {
-//		// Removes the active class from each li
-//		$('.definitions-list ul li').each(function() {
-//			$(this).removeClass('active');
-//		});
-//
-//		// Assigns the class name of the clicked li to the 'active' variable
-//		var active = $(this).attr('class');
-//		// Adds the active class to the clicked li
-//		$(this).addClass('active');
-//
-//		// Removes the active class from each definition description div
-//		$('.description').each(function() {
-//			$(this).removeClass('active');
-//		});
-//		// Adds the active class to the definition description that matches the clicked li
-//		$('.' + active + '-description').addClass('active');
-//		// Adds the appropriate class to the .definitions-description section to change the background color
-//		$('.definitions-description').attr('class', 'pure-u-1 pure-u-md-2-3 definitions-description ' + active);
-//	});
-//
-//	// Active section
-//	// Marks the active section in the navigation menu when it is the most appropriate one scrolled to
-//	$(window).scroll(function () {
-//		// Adds active class to active nav item's li.
-//		var y = $(this).scrollTop();
-//
-//		$('.link').each(function () {
-//			if (y >= $($(this).attr('href')).offset().top - 250) {
-//				$('.link').not(this).parent( 'li' ).removeClass('pure-menu-selected');
-//				$(this).parent( 'li' ).addClass('pure-menu-selected');
-//			}
-//		});
-//	});
-//
-//	// Navigation scroll animation
-//	// Animates scroll to appropriate section from navigation menu
-//	$(".link").click(function() {
-//		event.preventDefault();
-//		var target = $(this).attr("href");
-//		$('html, body').animate({
-//			scrollTop: $(target).offset().top - 70
-//		}, 2000);
-//	});
-//
-//	/*
-//	 * Plugins
-//	 */
-//
-//	// tooltip()
-//	// Adds stylized JavaScript tooltips to elements with titles.
-//	$(document).tooltip();
-//
-//})();
+////
+////	// Definitions functionality
+////	// Handles the definition switching and styling when new options are selected in the definitions section.
+////	$('.definitions-list ul li').click(function() {
+////		// Removes the active class from each li
+////		$('.definitions-list ul li').each(function() {
+////			$(this).removeClass('active');
+////		});
+////
+////		// Assigns the class name of the clicked li to the 'active' variable
+////		var active = $(this).attr('class');
+////		// Adds the active class to the clicked li
+////		$(this).addClass('active');
+////
+////		// Removes the active class from each definition description div
+////		$('.description').each(function() {
+////			$(this).removeClass('active');
+////		});
+////		// Adds the active class to the definition description that matches the clicked li
+////		$('.' + active + '-description').addClass('active');
+////		// Adds the appropriate class to the .definitions-description section to change the background color
+////		$('.definitions-description').attr('class', 'pure-u-1 pure-u-md-2-3 definitions-description ' + active);
+////	});
+////
+////	// Active section
+////	// Marks the active section in the navigation menu when it is the most appropriate one scrolled to
+////	$(window).scroll(function () {
+////		// Adds active class to active nav item's li.
+////		var y = $(this).scrollTop();
+////
+////		$('.link').each(function () {
+////			if (y >= $($(this).attr('href')).offset().top - 250) {
+////				$('.link').not(this).parent( 'li' ).removeClass('pure-menu-selected');
+////				$(this).parent( 'li' ).addClass('pure-menu-selected');
+////			}
+////		});
+////	});
+////
+////	// Navigation scroll animation
+////	// Animates scroll to appropriate section from navigation menu
+////	$(".link").click(function() {
+////		event.preventDefault();
+////		var target = $(this).attr("href");
+////		$('html, body').animate({
+////			scrollTop: $(target).offset().top - 70
+////		}, 2000);
+////	});
+////
+////	/*
+////	 * Plugins
+////	 */
+////
+////	// tooltip()
+////	// Adds stylized JavaScript tooltips to elements with titles.
+////	$(document).tooltip();
+////
+////})();
