@@ -1,4 +1,4 @@
-*, *:before, *:after, *:focus {
+*, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
@@ -11,16 +11,6 @@
 
 .content-box {
   padding: 1em 2em; }
-
-.input-box {
-  margin: 1em 2em;
-  padding: 1em;
-  background-color: #f2edde; }
-
-.input-box:focus {
-  background-color: #f8f5ed;
-  border: 1px solid #e1d5b2;
-  outline: none; }
 
 .input-column {
   background-color: #f2edde; }
@@ -63,21 +53,20 @@
   background-color: #f2edde; }
 
 html, button, input, select, textarea, .pure-g [class*="pure-u"] {
-  font-family: 'Merriweather', serif; }
+  font-family: "Merriweather", serif; }
 
 body {
   color: #160a06;
-  background-color: #f8f5ed;
   line-height: 1.4; }
 
 .content-box a:link, .content-box a:visited {
   color: #2251af; }
 
 .content-box a:hover {
-  color: #1a3f84; }
+  color: #1a3d84; }
 
 h1, .h1 {
-  font-family: 'Merriweather', serif;
+  font-family: "Merriweather", serif;
   font-weight: bold;
   font-size: 1.6em; }
   @media (min-width: 48em) {
@@ -91,8 +80,8 @@ h2, .h2 {
   color: #160a06; }
 
 .pure-form .check-box-options .pure-checkbox {
-  padding: 0.3em;
-  margin: 0.5em 0.2em; }
+  padding: .3em;
+  margin: .5em .2em; }
 
 .check-box-options i {
   background-color: #333;
@@ -121,6 +110,6 @@ h2, .h2 {
 .ui-tooltip {
   background-color: #f8f5ed;
   padding: 10px 20px;
-  font: normal 0.8em 'Merriweather', serif;
+  font: normal 0.8em "Merriweather", serif;
   box-shadow: 0 0 7px black;
   border: 1px solid #e1d5b2; }

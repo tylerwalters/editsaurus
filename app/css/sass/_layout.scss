@@ -1,0 +1,62 @@
+// _layout.scss
+
+.pure-menu.pure-menu-open {
+	background-color: #f7f6f4;
+}
+
+.main-content {
+	padding-top: 70px;
+}
+
+.content-box {
+	padding: 1em 2em;
+}
+
+.input-column {
+	background-color: $main-bg-color;
+}
+
+.output-column {
+	background-color: $main-bg-color-lighter;
+}
+
+.writing-check-input {
+	height: 200px;
+	@include breakpoint(md) { height: 400px; }
+}
+
+.definitions-list .content-box {
+	padding: 0;
+}
+
+.definitions-list ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.definitions-list ul li {
+	padding: 1.3em 2em;
+	cursor: pointer;
+	border-right: 2px solid rgba(0,0,0,0.2);
+}
+
+.definitions-list ul li.active {
+	border-right: none;
+}
+
+.description {
+	display: none;
+}
+
+.description.active {
+	display: block;
+}
+
+.about-copy {
+	background-color: $main-bg-color-lighter;
+}
+
+.author-copy {
+	background-color: $main-bg-color;
+}
