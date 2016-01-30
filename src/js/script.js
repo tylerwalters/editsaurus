@@ -1,15 +1,15 @@
-'use strict';
-
 /* global angular */
 /* global console */
 
-angular.module('writeCheck', [
+angular.module('editSaurus', [
   'ngSanitize'
 ]);
 
-angular.module('writeCheck')
+angular.module('editSaurus')
   .directive('checkText', ['$timeout', '$filter', '$sce', function ($timeout, $filter, $sce) {
     function link($scope, $element, $attrs) {
+      'use strict';
+
       var timer;
 
       $scope.selectedChecks = [];
@@ -48,6 +48,8 @@ angular.module('writeCheck')
 
   .directive('definitionList', [function () {
     function link($scope, $element, $attrs) {
+      'use strict';
+
       $scope.currentDefinition = 'adverb';
     }
 
@@ -59,6 +61,8 @@ angular.module('writeCheck')
 
   .filter('highlightText', [function () {
     return function (input, choices) {
+      'use strict';
+
       var checkOptions = {
         adverb: {
           name: 'adverb',
