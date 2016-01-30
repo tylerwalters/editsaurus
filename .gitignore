@@ -1,3 +1,4 @@
 node_modules
-sample-text.md
 .sass-cache
+npm-debug.log
+.idea/
