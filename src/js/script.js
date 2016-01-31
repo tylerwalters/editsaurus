@@ -66,8 +66,8 @@ angular.module('editSaurus')
       var checkOptions = {
         adverb: {
           name: 'adverb',
-          regex: /\w*ly\b/gi,
-          title: 'This adverb could be ommitted or replaced with a stronger verb.'
+          regex: /(?!ally|anomaly|assembly|belly|bully|dolly|doily|family|fly|gully|hillbilly|holly|homily|jelly|lily|monopoly|panoply|potbelly|rally|reply|supply|tally|underbelly|barfly|blowfly|botfly|butterfly|dragonfly|firefly|gadfly|horsefly|mayfly|medfly|apply|bely|comply|dally|imply|multiply|outfly|ply|rely|reply|supply|authorly|beastly|brotherly|cowardly|fatherly|gentlemanly|granddaughterly|housekeeperly|husbandly|kingly|landlordly|manly|marksmanly|matronly|miserly|motherly|neighborly|queenly|saintly|scholarly|southerly|wifely|womanly|daily|easterly|hourly|monthly|nightly|northeasterly|northerly|northwesterly|quarterly|rarely|timely|weekly|westerly|wobbly|yearly|bristly|bubbly|crinkly|crumbly|crumply|cuddly|curly|frizzly|giggly|rumply|smelly|sparkly|wriggly|wrinkly|bodily|burly|chilly|comely|costly|courtly|dastardly|deadly|deathly|disorderly|early|frilly|friendly|ghastly|goodly|gravelly|grisly|heavanly|hilly|holy|homely|jolly|kindly|knurly|leisurely|likely|lively|lonely|lovely|lowly|mannerly|mealy|measly|melancholy|oily|only|orderly|otherworldly|pearly|pebbly|pimply|scaly|shapely|sickly|silly|slatternly|slovenly|sly|spindly|sprightly|squiggly|stately|steely|surly|treacly|ugly|ungainly|unlikely|wily|wooly|worldly)\b\w*ly\b/gi,
+          title: 'This adverb could be omitted or replaced with a stronger verb.'
         },
         fillerWords: {
           name: 'filler-words',
