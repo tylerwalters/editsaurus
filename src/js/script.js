@@ -12,9 +12,9 @@ angular.module('editSaurus')
 
       var timer;
 
-      $scope.selectedChecks = [];
+      $scope.selectedChecks = ['adverb', 'fillerWords', 'passiveVoice', 'lexicalIllusions', 'misusedWords', 'pronoun'];
       $scope.input = '';
-      $scope.output = 'Checked text copy will go here.';
+      $scope.output = '<p>Checked text copy will go here.</p>';
 
       $scope.toggleCheck = function (check) {
         var index = $scope.selectedChecks.indexOf(check);
@@ -96,25 +96,27 @@ angular.module('editSaurus')
         }
       };
 
-      // Creates html paragraphs where line breaks occur in the submitted text
+      if (!input) {
+        return '<p>Checked text copy will go here.</p>';
+      }
+
+      // Creates paragraphs where line breaks occur in the submitted text
       input = '<p>' + input.replace(/\r\n|\n\r|\n\n|\r\r/g, '</p><p>') + '</p>';
       var i = 0,
         max = choices.length,
         re;
       // Loops through the selected check options to apply each one to the submitted text
       for (i = 0; i < max; i++) {
-        // Replaces the existing text each loop with the same text with the latest check option applied, check options mark where tags will be placed in the next step
-        input = input.replace(checkOptions[choices[i]].regex, '***' + checkOptions[choices[i]].name + '***$&***endspan***');
+        // Wraps each match with a span tag and a class
+        input = input.replace(checkOptions[choices[i]].regex, '<span class="' + checkOptions[choices[i]].name + '">$&</span>');
       }
 
-      // Loops through text again for each check option to replace marker text with span tags to highlight the text in the output. It is handled this way to avoid conflicts when the regex was matching text in the span tags' title attribute.
+      // Loops through text to add titles to each match. It is handled this way to avoid incorrectly finding matches in the title text.
       for (i = 0; i < max; i++) {
-        // Regular expression to look for markers placed for each check option in the last loop
-        re = new RegExp('\\*\\*\\*' + checkOptions[choices[i]].name + '\\*\\*\\*', 'g');
-        // Replaces each opening marker with a span tag with a class and title appropriate for each check option
+        // Regular expression to look for spans and classes for each check
+        re = new RegExp('<span class="' + checkOptions[choices[i]].name + '">', 'g');
+        // Adds titles in addition to classes to each span tag
         input = input.replace(re, '<span class="' + checkOptions[choices[i]].name + '" title="' + checkOptions[choices[i]].title + '">');
-        // Replaces each closing marker with a closing tag for the span
-        input = input.replace(/\*\*\*endspan\*\*\*/g, '</span>');
       }
       // Returns edited text for output
       return input;
