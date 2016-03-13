@@ -12,9 +12,9 @@ angular.module('editSaurus')
 
       var timer;
 
-      $scope.selectedChecks = ['adverb', 'fillerWords', 'passiveVoice', 'lexicalIllusions', 'misusedWords', 'pronoun'];
-      $scope.input = '';
+      $scope.selectedChecks = ['adverb', 'fillerWords', 'passiveVoice', 'lexicalIllusions'];
       $scope.output = '<p>Checked text copy will go here.</p>';
+      $scope.input = angular.element($element[0].querySelector('#writing-check-input'));
 
       $scope.toggleCheck = function (check) {
         var index = $scope.selectedChecks.indexOf(check);
@@ -29,7 +29,7 @@ angular.module('editSaurus')
       };
 
       $scope.updateOutput = function () {
-        $scope.output = $filter('highlightText')($scope.input, $scope.selectedChecks);
+        $scope.output = $sce.trustAsHtml($filter('highlightText')($scope.input.html(), $scope.selectedChecks));
       };
 
       $scope.processText = function () {
@@ -38,6 +38,22 @@ angular.module('editSaurus')
           $scope.updateOutput();
         }, 200);
       };
+
+      $scope.input.on('paste', function() {
+        $timeout(function () {
+          $scope.input.html(replaceStyleAttr(removeAllTags($scope.input.html())));
+        }, 0);
+      });
+
+      function replaceStyleAttr (str) {
+        return str.replace(/(<[\w\W]*?)(style)([\w\W]*?>)/g, function (a, b, c, d) {
+          return b + 'style_replace' + d;
+        });
+      }
+
+      function removeAllTags (str) {
+        return str.replace(/<(?!\s*\/?\s*p\b)[^>]*>/gi,'');
+      }
     }
 
     return {
@@ -102,6 +118,8 @@ angular.module('editSaurus')
 
       // Creates paragraphs where line breaks occur in the submitted text
       input = '<p>' + input.replace(/\r\n|\n\r|\n\n|\r\r/g, '</p><p>') + '</p>';
+      // Creates paragraphs where line breaks occur in the submitted text
+      input = input.replace(/\r|\n/g, '<br>');
       var i = 0,
         max = choices.length,
         re;
@@ -116,7 +134,7 @@ angular.module('editSaurus')
         // Regular expression to look for spans and classes for each check
         re = new RegExp('<span class="' + checkOptions[choices[i]].name + '">', 'g');
         // Adds titles in addition to classes to each span tag
-        input = input.replace(re, '<span class="' + checkOptions[choices[i]].name + '" title="' + checkOptions[choices[i]].title + '">');
+        input = input.replace(re, '<span class="' + checkOptions[choices[i]].name + '" data-tooltip="' + checkOptions[choices[i]].title + '">');
       }
       // Returns edited text for output
       return input;
