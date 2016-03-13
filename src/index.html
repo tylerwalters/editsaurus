@@ -24,8 +24,14 @@
 </head>
 
 <body ng-app="editSaurus">
-  <div class="pure-menu pure-menu-open pure-menu-horizontal header"><a href="" class="pure-menu-heading">
-    <h1 class="pure-menu-heading pure-menu-link">Editsaurus</h1></a>
+
+<div class="editsaurus" itemscope itemtype="http://schema.org/WebApplication">
+  <meta itemprop="applicationCategory" content="Tool, Writing">
+  <meta itemprop="applicationCategory" content="Editing">
+  <meta itemprop="operatingSystem" content="OSX, iOS, Android, Windows, Linux">
+
+  <div class="pure-menu pure-menu-open pure-menu-horizontal header">
+    <h1 class="pure-menu-heading pure-menu-link" itemprop="name">Editsaurus</h1>
     <ul class="pure-menu-list">
       <li class="pure-menu-selected pure-menu-item"><a href="#check" class="pure-menu-link link"><i class="fa fa-pencil"></i>&nbsp; Check</a></li>
       <li class="pure-menu-item"><a href="#definitions" class="pure-menu-link link"><i class="fa fa-book"></i>&nbsp; Definitions</a></li>
@@ -38,28 +44,28 @@
       <div class="content-box">
         <form id="writing-check-form" class="pure-form pure-form stacked">
           <fieldset>
-            <textarea title="Text Input" id="writing-check-input" name="writing-check-input" placeholder="Enter your text copy" required class="writing-check-input pure-input-1" ng-model="input" ng-keyup="processText()"></textarea>
+            <div id="writing-check-input" class="writing-check-input pure-input-1" ng-keyup="processText()" contenteditable="true">Enter text here.</div>
             <div class="pure-g">
               <div class="pure-u-1 pure-u-sm-1-2 check-box-options">
-                <label for="check-adverb" class="pure-checkbox adverb">
-                  <input id="check-adverb" type="checkbox" value="adverb" ng-click="toggleCheck('adverb')" checked><i title="Highlights adverbs that could be ommitted or replaced with a stronger verb." class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Adverbs
+                <label for="check-adverb" class="pure-checkbox adverb" data-tooltip="Highlights adverbs that could be omitted or replaced with a stronger verb.">
+                  <input id="check-adverb" type="checkbox" value="adverb" ng-click="toggleCheck('adverb')" checked><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Adverbs
                 </label>
-                <label for="check-filler" class="pure-checkbox filler-words">
-                  <input id="check-filler" type="checkbox" value="fillerWords" ng-click="toggleCheck('fillerWords')" checked><i title="Highlights words that may be unnecessary and not add anything of value." class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Filler Words
+                <label for="check-filler" class="pure-checkbox filler-words" data-tooltip="Highlights words that may be unnecessary and not add anything of value.">
+                  <input id="check-filler" type="checkbox" value="fillerWords" ng-click="toggleCheck('fillerWords')" checked><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Filler Words
                 </label>
-                <label for="check-passive" class="pure-checkbox passive-voice">
-                  <input id="check-passive" type="checkbox" value="passiveVoice" ng-click="toggleCheck('passiveVoice')" checked><i title="Highlights possible instances of passive voice." class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Passive Voice
+                <label for="check-passive" class="pure-checkbox passive-voice" data-tooltip="Highlights possible instances of passive voice.">
+                  <input id="check-passive" type="checkbox" value="passiveVoice" ng-click="toggleCheck('passiveVoice')" checked><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Passive Voice
                 </label>
               </div>
               <div class="pure-u-1 pure-u-sm-1-2 check-box-options">
-                <label for="check-lexical" class="pure-checkbox lexical-illusions">
-                  <input id="check-lexical" type="checkbox" value="lexicalIllusions" ng-click="toggleCheck('lexicalIllusions')" checked><i title="Highlights possible lexical illusions (duplicate words)." class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Lexical Illusions
+                <label for="check-lexical" class="pure-checkbox lexical-illusions" data-tooltip="Highlights possible lexical illusions (duplicate words).">
+                  <input id="check-lexical" type="checkbox" value="lexicalIllusions" ng-click="toggleCheck('lexicalIllusions')" checked><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Lexical Illusions
                 </label>
-                <label for="check-misused" class="pure-checkbox misused-words">
-                  <input id="check-misused" type="checkbox" value="misusedWords" ng-click="toggleCheck('misusedWords')" checked><i title="Highlights common mistaken words. (there/their/they're, your/you're, its/it's, whose/who's" class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Common Misused Words
+                <label for="check-misused" class="pure-checkbox misused-words" data-tooltip="Highlights common mistaken words. (there/their/they're, your/you're, its/it's, whose/who's">
+                  <input id="check-misused" type="checkbox" value="misusedWords" ng-click="toggleCheck('misusedWords')"><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Common Misused Words
                 </label>
-                <label for="pronoun" class="pure-checkbox pronoun">
-                  <input id="pronoun" type="checkbox" value="pronoun" ng-click="toggleCheck('pronoun')" checked><i title="Highlights pronouns so they can be double checked for clarity." class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Pronouns
+                <label for="pronoun" class="pure-checkbox pronoun" data-tooltip="Highlights pronouns so they can be double checked for clarity.">
+                  <input id="pronoun" type="checkbox" value="pronoun" ng-click="toggleCheck('pronoun')"><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Pronouns
                 </label>
               </div>
             </div>
@@ -78,7 +84,7 @@
   <div id="definitions" class="pure-g definitions" definition-list>
     <div class="pure-u-1 pure-u-md-1-3 definitions-list">
       <div class="content-box">
-        <ul>
+        <ul itemprop="featureList">
           <li class="adverb" ng-class="{'active': currentDefinition === 'adverb'}" ng-click="currentDefinition = 'adverb'">Adverbs</li>
           <li class="filler-words" ng-class="{'active': currentDefinition === 'filler-words'}" ng-click="currentDefinition = 'filler-words'">Filler Words</li>
           <li class="passive-voice" ng-class="{'active': currentDefinition == 'passive-voice'}" ng-click="currentDefinition = 'passive-voice'">Passive Voice</li>
@@ -148,34 +154,39 @@
     <div class="pure-u-1 pure-u-md-2-3 about-copy">
       <div class="content-box">
         <h2>About</h2>
-        <p>The purpose of this website is to highlight potential pitfalls in your writing and encourage good habits. Few of the things this tool highlights are hard and fast rules. Try to look at the output as a chance to think about your writing choices and see if there are areas for improvement.</p>
-        <p>This website is not infallible. It will miss things and there will be false positives in the results from time to time. This is not a replacement for careful editing. That said, I do hope this provides useful feedback to you. </p>
-        <p>The article <a href="http://matt.might.net/articles/shell-scripts-for-passive-voice-weasel-words-duplicates/">3 shell scripts to improve your writing, or "My Ph.D. advisor rewrote himself in bash." by Matt Might</a> inspired this website. I have expanded on it to include other things I thought would be helpful.</p>
+        <div itemprop="description">
+          <p>The purpose of this website is to highlight potential pitfalls in your writing and encourage good habits. Few of the things this tool highlights are hard and fast rules. Try to look at the output as a chance to think about your writing choices and see if there are areas for improvement.</p>
+          <p>This website is not infallible. It will miss things and there will be false positives in the results from time to time. This is not a replacement for careful editing. That said, I do hope this provides useful feedback to you. </p>
+          <p>The article <a href="http://matt.might.net/articles/shell-scripts-for-passive-voice-weasel-words-duplicates/">3 shell scripts to improve your writing, or "My Ph.D. advisor rewrote himself in bash." by Matt Might</a> inspired this website. I have expanded on it to include other things I thought would be helpful.</p>
+        </div>
       </div>
     </div>
     <div class="pure-u-1 pure-u-md-1-3 author-copy">
-      <div class="content-box">
-        <h3>Created by Tyler Walters</h3>
-        <p>This website was created by Tyler Walters. He loves both web development and writing, which is convenient for this project. </p>
-        <p>You can see what other web projects he is working on at his <a href="http://tylerwalters.com">personal website</a> and some of his writing (specifically about beer and hot wings) on <a href="http://whydidieatthis.com">Why Did I Eat This</a>.</p>
-        <p><a href="https://twitter.com/_twalters" title="Tyler Walters on Twitter"><i class="fa fa-twitter-square fa-2x"></i></a>&nbsp;&nbsp;<a href="https://github.com/tylerwalters/" title="Tyler Walters on Github"><i class="fa fa-github-square fa-2x"></i></a></p>
+      <div class="content-box" itemprop="creator author" itemscope itemtype="https://schema.org/Person">
+        <h3>Created by <span itemprop="name">Tyler Walters</span></h3>
+        <div itemprop="description">
+          <p>This website was created by Tyler Walters. He loves both web development and writing, which is convenient for this project. </p>
+          <p>You can see what other web projects he is working on at his <a href="http://tylerwalters.com" itemprop="url">personal website</a> and some of his writing (specifically about beer and hot wings) on <a href="http://whydidieatthis.com">Why Did I Eat This</a>.</p>
+        </div>
+        <p><a href="https://twitter.com/_twalters" title="Tyler Walters on Twitter" itemprop="url"><i class="fa fa-twitter-square fa-2x"></i></a>&nbsp;&nbsp;<a href="https://github.com/tylerwalters/" title="Tyler Walters on Github" itemprop="url"><i class="fa fa-github-square fa-2x"></i></a></p>
         <p>The code powering this website is open source and available on GitHub: <a href="https://github.com/tylerwalters/editsaurus">Editsaurus</a>.</p>
       </div>
     </div>
   </div>
+</div>
 
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-sanitize.min.js"></script>
-  <script src="js/script.min.js"></script>
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-sanitize.min.js"></script>
+<script src="js/script.min.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-73096259-1', 'auto');
-    ga('send', 'pageview');
+  ga('create', 'UA-73096259-1', 'auto');
+  ga('send', 'pageview');
 
-  </script>
+</script>
 </body>
 </html>
