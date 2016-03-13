@@ -40,10 +40,9 @@ gulp.task('copy', function () {
 });
 
 gulp.task('watch', function () {
-  gulp.watch('src/sass/**/*.scss', ['sass', 'sass-min']);
+  gulp.watch('src/sass/**/*.scss', ['sass']);
   gulp.watch('src/js/**/*.js', ['lint', 'js-min']);
   gulp.watch('src/index.html', ['copy']);
 });
 
-gulp.task('minify', ['sass-min', 'js-min']);
 gulp.task('build', ['lint', 'sass', 'js-min', 'copy']);
