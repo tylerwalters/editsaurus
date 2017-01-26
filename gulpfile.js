@@ -3,11 +3,11 @@
 'use strict';
 
 var gulp = require('gulp'),
-  jshint = require('gulp-jshint'),
-  sass = require('gulp-sass'),
-  sourcemaps = require('gulp-sourcemaps'),
-  concat = require('gulp-concat'),
-  uglify = require('gulp-uglify');
+    jshint = require('gulp-jshint'),
+    sass = require('gulp-sass'),
+    sourcemaps = require('gulp-sourcemaps'),
+    concat = require('gulp-concat'),
+    uglify = require('gulp-uglify');
 
 
 gulp.task('lint', function () {
@@ -22,6 +22,7 @@ gulp.task('sass', function () {
     .pipe(sass({outputStyle: 'compressed'}))
     .pipe(sourcemaps.write())
     .pipe(concat('style.min.css'))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('dist/css'));
 });
 
@@ -31,6 +32,7 @@ gulp.task('js-min', function () {
     .pipe(uglify())
     .pipe(sourcemaps.write())
     .pipe(concat('script.min.js'))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('dist/js'));
 });
 
