@@ -20,8 +20,8 @@ gulp.task('sass', function () {
   return gulp.src('src/sass/style.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'compressed'}))
-    .pipe(sourcemaps.write('.'))
     .pipe(concat('style.min.css'))
+    .pipe(sourcemaps.write('../maps'))
     .pipe(gulp.dest('dist/css'));
 });
 
@@ -29,8 +29,8 @@ gulp.task('js-min', function () {
   return gulp.src('src/js/script.js')
     .pipe(sourcemaps.init())
     .pipe(uglify())
-    .pipe(sourcemaps.write('.'))
     .pipe(concat('script.min.js'))
+    .pipe(sourcemaps.write('../maps'))
     .pipe(gulp.dest('dist/js'));
 });
 
