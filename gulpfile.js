@@ -35,14 +35,14 @@ gulp.task('js-min', function () {
 });
 
 gulp.task('copy', function () {
-  return gulp.src('src/index.html')
+  return gulp.src(['src/index.html', 'src/worker.js', 'src/serviceworker-cache-polyfill.js'])
     .pipe(gulp.dest('dist'));
 });
 
 gulp.task('watch', function () {
   gulp.watch('src/sass/**/*.scss', ['sass']);
   gulp.watch('src/js/**/*.js', ['lint', 'js-min']);
-  gulp.watch('src/index.html', ['copy']);
+  gulp.watch(['src/index.html', 'src/worker.js'], ['copy']);
 });
 
 gulp.task('build', ['lint', 'sass', 'js-min', 'copy']);
