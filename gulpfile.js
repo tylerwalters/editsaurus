@@ -7,7 +7,8 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     concat = require('gulp-concat'),
-    uglify = require('gulp-uglify');
+    uglify = require('gulp-uglify'),
+    inlinesource = require('gulp-inline-source');
 
 
 gulp.task('lint', function () {
@@ -35,7 +36,13 @@ gulp.task('js-min', function () {
 });
 
 gulp.task('copy', function () {
-  return gulp.src(['src/index.html', 'src/worker.js', 'src/serviceworker-cache-polyfill.js', 'src/manifest.json'])
+  return gulp.src(['src/worker.js', 'src/serviceworker-cache-polyfill.js', 'src/manifest.json'])
+    .pipe(gulp.dest('dist'));
+});
+
+gulp.task('copy-index', ['sass'], function () {
+  return gulp.src('src/index.html')
+    .pipe(inlinesource())
     .pipe(gulp.dest('dist'));
 });
 
@@ -47,7 +54,8 @@ gulp.task('copy-images', function () {
 gulp.task('watch', function () {
   gulp.watch('src/sass/**/*.scss', ['sass']);
   gulp.watch('src/js/**/*.js', ['lint', 'js-min']);
-  gulp.watch(['src/index.html', 'src/worker.js', 'src/manifest.json'], ['copy']);
+  gulp.watch(['src/worker.js', 'src/manifest.json'], ['copy']);
+  gulp.watch('src/index.html', ['copy-index']);
 });
 
-gulp.task('build', ['lint', 'sass', 'js-min', 'copy', 'copy-images']);
+gulp.task('build', ['lint', 'sass', 'js-min', 'copy', 'copy-index', 'copy-images']);
