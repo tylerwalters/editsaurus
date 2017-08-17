@@ -35,14 +35,19 @@ gulp.task('js-min', function () {
 });
 
 gulp.task('copy', function () {
-  return gulp.src(['src/index.html', 'src/worker.js', 'src/serviceworker-cache-polyfill.js'])
+  return gulp.src(['src/index.html', 'src/worker.js', 'src/serviceworker-cache-polyfill.js', 'src/manifest.json'])
     .pipe(gulp.dest('dist'));
+});
+
+gulp.task('copy-images', function () {
+  return gulp.src(['src/images/**/*.jpg', 'src/images/**/*.gif', 'src/images/**/*.png', 'src/images/**/*.svg'])
+    .pipe(gulp.dest('dist/images'));
 });
 
 gulp.task('watch', function () {
   gulp.watch('src/sass/**/*.scss', ['sass']);
   gulp.watch('src/js/**/*.js', ['lint', 'js-min']);
-  gulp.watch(['src/index.html', 'src/worker.js'], ['copy']);
+  gulp.watch(['src/index.html', 'src/worker.js', 'src/manifest.json'], ['copy']);
 });
 
-gulp.task('build', ['lint', 'sass', 'js-min', 'copy']);
+gulp.task('build', ['lint', 'sass', 'js-min', 'copy', 'copy-images']);
