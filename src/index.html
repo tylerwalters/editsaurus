@@ -12,18 +12,6 @@
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
-  <link rel="preload" href="//cdn.jsdelivr.net/pure/0.6.0/pure-min.css" as="style" onload="this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="//cdn.jsdelivr.net/pure/0.6.0/pure-min.css"></noscript>
-
-  <!--[if lte IE 8]>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/pure/0.6.0/grids-responsive-old-ie-min.css">
-  <![endif]-->
-
-  <!--[if gt IE 8]><!-->
-  <link rel="preload" href="//cdn.jsdelivr.net/pure/0.6.0/grids-responsive-min.css" as="style" onload="this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="//cdn.jsdelivr.net/pure/0.6.0/grids-responsive-min.css"></noscript>
-  <!--<![endif]-->
-
   <link rel="stylesheet" href="../dist/css/style.min.css" inline>
 
   <link rel="preload" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" as="style" onload="this.rel='stylesheet'">
@@ -46,36 +34,36 @@
   <meta itemprop="applicationCategory" content="Editing">
   <meta itemprop="operatingSystem" content="OSX, iOS, Android, Windows, Linux">
 
-  <div class="pure-menu pure-menu-open pure-menu-horizontal header">
-    <h1 class="pure-menu-heading pure-menu-link" itemprop="name">Editsaurus</h1>
+  <div class="header">
+    <h1 itemprop="name">Editsaurus</h1>
   </div>
 
-  <div id="check" class="pure-g main-content" check-text>
-    <div class="pure-u-1 pure-u-md-1-2 input-column">
+  <div id="check" class="main-content row" check-text>
+    <div class="input-column">
       <div class="content-box">
-        <form id="writing-check-form" class="pure-form pure-form stacked">
+        <form id="writing-check-form" class="stacked">
           <fieldset>
-            <div id="writing-check-input" class="writing-check-input pure-input-1" ng-keyup="processText()" contenteditable="true">Enter text here.</div>
-            <div class="pure-g">
-              <div class="pure-u-1 pure-u-sm-1-2 check-box-options">
-                <label for="check-adverb" class="pure-checkbox adverb" data-tooltip="Highlights adverbs that could be omitted or replaced with a stronger verb.">
+            <div id="writing-check-input" class="writing-check-input" ng-keyup="processText()" contenteditable="true">Enter text here.</div>
+            <div class="row">
+              <div class="check-box-options">
+                <label for="check-adverb" class="checkbox adverb" data-tooltip="Highlights adverbs that could be omitted or replaced with a stronger verb.">
                   <input id="check-adverb" type="checkbox" value="adverb" ng-click="toggleCheck('adverb')" checked><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Adverbs
                 </label>
-                <label for="check-filler" class="pure-checkbox filler-words" data-tooltip="Highlights words that may be unnecessary and not add anything of value.">
+                <label for="check-filler" class="checkbox filler-words" data-tooltip="Highlights words that may be unnecessary and not add anything of value.">
                   <input id="check-filler" type="checkbox" value="fillerWords" ng-click="toggleCheck('fillerWords')" checked><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Filler Words
                 </label>
-                <label for="check-passive" class="pure-checkbox passive-voice" data-tooltip="Highlights possible instances of passive voice.">
+                <label for="check-passive" class="checkbox passive-voice" data-tooltip="Highlights possible instances of passive voice.">
                   <input id="check-passive" type="checkbox" value="passiveVoice" ng-click="toggleCheck('passiveVoice')" checked><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Passive Voice
                 </label>
               </div>
-              <div class="pure-u-1 pure-u-sm-1-2 check-box-options">
-                <label for="check-lexical" class="pure-checkbox lexical-illusions" data-tooltip="Highlights possible lexical illusions (duplicate words).">
+              <div class="check-box-options">
+                <label for="check-lexical" class="checkbox lexical-illusions" data-tooltip="Highlights possible lexical illusions (duplicate words).">
                   <input id="check-lexical" type="checkbox" value="lexicalIllusions" ng-click="toggleCheck('lexicalIllusions')" checked><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Lexical Illusions
                 </label>
-                <label for="check-misused" class="pure-checkbox misused-words" data-tooltip="Highlights common mistaken words. (there/their/they're, your/you're, its/it's, whose/who's">
-                  <input id="check-misused" type="checkbox" value="misusedWords" ng-click="toggleCheck('misusedWords')"><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Common Misused Words
+                <label for="check-misused" class="checkbox misused-words" data-tooltip="Highlights common mistaken words. (there/their/they're, your/you're, its/it's, whose/who's">
+                  <input id="check-misused" type="checkbox" value="misusedWords" ng-click="toggleCheck('misusedWords')"><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Misused Words
                 </label>
-                <label for="pronoun" class="pure-checkbox pronoun" data-tooltip="Highlights pronouns so they can be double checked for clarity.">
+                <label for="pronoun" class="checkbox pronoun" data-tooltip="Highlights pronouns so they can be double checked for clarity.">
                   <input id="pronoun" type="checkbox" value="pronoun" ng-click="toggleCheck('pronoun')"><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Pronouns
                 </label>
               </div>
@@ -84,7 +72,7 @@
         </form>
       </div>
     </div>
-    <div class="pure-u-1 pure-u-md-1-2 output-column">
+    <div class="output-column">
       <div class="content-box">
         <div id="writing-check-output" ng-bind-html="output">
         </div>
@@ -92,8 +80,8 @@
     </div>
   </div>
 
-  <div id="definitions" class="pure-g definitions" definition-list>
-    <div class="pure-u-1 pure-u-md-1-3 definitions-list">
+  <div id="definitions" class="definitions row" definition-list>
+    <div class="definitions-list">
       <div class="content-box">
         <ul itemprop="featureList">
           <li class="adverb" ng-class="{'active': currentDefinition === 'adverb'}" ng-click="currentDefinition = 'adverb'">Adverbs</li>
@@ -105,7 +93,7 @@
         </ul>
       </div>
     </div>
-    <div class="pure-u-1 pure-u-md-2-3 definitions-description" ng-class="currentDefinition">
+    <div class="definitions-description" ng-class="currentDefinition">
       <div class="content-box">
         <div class="adverb-description description" ng-class="{'active': currentDefinition === 'adverb'}">
           <h2>Adverbs</h2>
@@ -161,8 +149,8 @@
     </div>
   </div>
 
-  <div id="about" class="pure-g about">
-    <div class="pure-u-1 pure-u-md-2-3 about-copy">
+  <div id="about" class="row about">
+    <div class="about-copy">
       <div class="content-box">
         <h2>About</h2>
         <div itemprop="description">
@@ -172,7 +160,7 @@
         </div>
       </div>
     </div>
-    <div class="pure-u-1 pure-u-md-1-3 author-copy">
+    <div class="author-copy">
       <div class="content-box" itemprop="creator author" itemscope itemtype="https://schema.org/Person">
         <h3>Created by <span itemprop="name">Tyler Walters</span></h3>
         <div itemprop="description">

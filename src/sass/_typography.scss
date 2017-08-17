@@ -1,6 +1,6 @@
 // _typography.scss
 
-html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
+html, button, input, select, textarea {
 	font-family: $body-font;
 }
 
@@ -18,23 +18,25 @@ body {
 }
 
 h1, .h1 {
+	padding: .5em 1em;
+    color: #565d64;
+    text-transform: uppercase;
 	font-family: $body-font;
 	font-weight: bold;
+    text-align: center;
+    margin: 0;
 	font-size: 1.6em;
-	@include breakpoint(md) { font-size: 2em; }
+	@include breakpoint(md) { font-size: 3em; }
 }
 
 h2, .h2 {
 	color: #222;
 }
 
-.pure-menu .pure-menu-heading {
-	color: $body-color;
-}
-
-.pure-form .check-box-options .pure-checkbox {
-	padding: .3em;
-	margin: .5em .2em;
+.checkbox {
+    padding: .3em;
+    margin: .5em .2em;
+    display: block;
 }
 
 .check-box-options i {
@@ -74,4 +76,10 @@ h2, .h2 {
   font: normal .8em $body-font;
   box-shadow: 0 0 7px black;
   border: 1px solid $main-bg-color-darker;
+}
+
+fieldset {
+	margin: 0;
+    padding: .35em 0 .75em;
+    border: 0;
 }

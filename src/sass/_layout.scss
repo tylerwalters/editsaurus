@@ -1,7 +1,15 @@
 // _layout.scss
 
-.pure-menu.pure-menu-open {
-	background-color: #f7f6f4;
+.header {
+    background-color: #f7f6f4;
+    overflow: auto;
+}
+
+.row {
+    text-rendering: optimizespeed;
+    display: flex;
+	flex-flow: row wrap;
+    align-content: flex-start;
 }
 
 .content-box {
@@ -14,6 +22,28 @@
 
 .output-column {
 	background-color: $main-bg-color-lighter;
+}
+
+.input-column, .output-column {
+	width: 100%;
+    display: inline-block;
+    zoom: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+	@include breakpoint(md) { width: 50%; }
+}
+
+.check-box-options {
+	width: 100%;
+	display: inline-block;
+    zoom: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+	@include breakpoint(sm) { width: 50%; }
 }
 
 #writing-check-output {
@@ -31,6 +61,17 @@
 	border: 1px solid rgba(0, 0, 0, 0.3);
 	border-radius: 4px;
 	@include breakpoint(md) { min-height: 400px; }
+}
+
+.definitions-list, .author-copy {
+	width: 100%;
+	display: inline-block;
+    zoom: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+	@include breakpoint(md) { width: 33.3333%; }
 }
 
 .definitions-list .content-box {
@@ -51,6 +92,17 @@
 
 .definitions-list ul li.active {
 	border-right: none;
+}
+
+.definitions-description, .about-copy {
+	width: 100%;
+	display: inline-block;
+    zoom: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+	@include breakpoint(md) { width: 66.6667%; }
 }
 
 .description {
