@@ -8,16 +8,16 @@
 
   <title>Editsaurus by Tyler Walters</title>
 
-  <link rel="manifest" href="/manifest.json">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="manifest" href="manifest.json">
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="images/favicon.png" type="image/x-icon">
 
   <link rel="stylesheet" href="../dist/css/style.min.css" inline>
 
-  <link rel="preload" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" as="style" onload="this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"></noscript>
-  <link rel="preload" href="//fonts.googleapis.com/css?family=Merriweather:400,700,400italic" as="style" onload="this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700,400italic"></noscript>
+  <link rel="preload" href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"></noscript>
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Merriweather:400,700,400italic" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,700,400italic"></noscript>
 
   <script>
     /*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
@@ -55,6 +55,9 @@
                 <label for="check-passive" class="checkbox passive-voice" data-tooltip="Highlights possible instances of passive voice.">
                   <input id="check-passive" type="checkbox" value="passiveVoice" ng-click="toggleCheck('passiveVoice')" checked><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Passive Voice
                 </label>
+                <label for="check-to-be-verbs" class="checkbox to-be-verbs" data-tooltip="Highlights possible instances of to be verbs.">
+                  <input id="check-to-be-verbs" type="checkbox" value="toBeVerbs" ng-click="toggleCheck('toBeVerbs')" checked><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; To Be Verbs
+                </label>
               </div>
               <div class="check-box-options">
                 <label for="check-lexical" class="checkbox lexical-illusions" data-tooltip="Highlights possible lexical illusions (duplicate words).">
@@ -90,6 +93,7 @@
           <li class="lexical-illusions" ng-class="{'active': currentDefinition == 'lexical-illusions'}" ng-click="currentDefinition = 'lexical-illusions'">Lexical Illusions</li>
           <li class="misused-words" ng-class="{'active': currentDefinition == 'misused-words'}" ng-click="currentDefinition = 'misused-words'">Common Misused Words</li>
           <li class="pronoun" ng-class="{'active': currentDefinition == 'pronoun'}" ng-click="currentDefinition = 'pronoun'">Pronouns</li>
+          <li class="to-be-verbs" ng-class="{'active': currentDefinition == 'to-be-verbs'}" ng-click="currentDefinition = 'to-be-verbs'">To Be Verbs</li>
         </ul>
       </div>
     </div>
@@ -145,6 +149,14 @@
           <p>This test highlights pronouns in your writing. This allows you to check the pronouns for clarity. A pronoun should refer to a specific noun, be clear which noun it is referring to, and agree in number and in person with the noun it refers to. </p>
           <p>Further reading: <a href="http://www.msvu.ca/en/home/studentservices/academicadvisingsupport/writingresourcecentre/handouts/makingclearpronounreferences/default.aspx">Making Clear Pronoun References at Mount Saint Vincent University</a></p>
         </div>
+        <div class="to-be-verbs-description description" ng-class="{'active': currentDefinition === 'to-be-verbs'}">
+          <h2>To Be Verbs</h2>
+          <ul>
+            <li>am, is, are, was, were, be, been, being</li>
+          </ul>
+          <p>This test highlights "to be verbs" in your writing. This allows you to check the to be verbs for clarity. Avoid weak to be verbs that only convey existence and not action. </p>
+          <p>Further reading: <a href="https://www.grammar.com/verb-to-be/">Verb "To Be"</a></p>
+        </div>
       </div>
     </div>
   </div>
@@ -174,8 +186,8 @@
   </div>
 </div>
 
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-sanitize.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-sanitize.min.js"></script>
 <script src="js/script.min.js"></script>
 <script>
   window.addEventListener('load', function() {
@@ -186,15 +198,6 @@
               console.log('ServiceWorker registration failed: ', err);
       });
   });
-</script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-73096259-1', 'auto');
-  ga('send', 'pageview');
 </script>
 </body>
 </html>

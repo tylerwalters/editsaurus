@@ -12,7 +12,7 @@ angular.module('editSaurus')
 
       var timer;
 
-      $scope.selectedChecks = ['adverb', 'fillerWords', 'passiveVoice', 'lexicalIllusions'];
+      $scope.selectedChecks = ['adverb', 'fillerWords', 'passiveVoice', 'lexicalIllusions', 'toBeVerbs'];
       $scope.output = '<p>Checked text copy will go here.</p>';
       $scope.input = angular.element($element[0].querySelector('#writing-check-input'));
 
@@ -102,13 +102,18 @@ angular.module('editSaurus')
         },
         misusedWords: {
           name: 'misused-words',
-          regex: /\b(their|they're|there|your|you're|its|it's|whose|who's|accept|except|affect|effect|allusion|illusion|capital|capitol|climactic|climatic|elicit|illicit|emigrate|immigrate|principle|principal|than|then|to|too|two|lie|lay|set|sit|suppose to|use to|towards|anyways|could care less|intensive purposes)\b/gi,
+          regex: /(?!to\Wbe)\b(their|they're|there|your|you're|its|it's|whose|who's|accept|except|affect|effect|allusion|illusion|capital|capitol|climactic|climatic|elicit|illicit|emigrate|immigrate|principle|principal|than|then|to|too|two|lie|lay|set|sit|suppose to|use to|towards|anyways|could care less|intensive purposes)\b/gi,
           title: 'This word is commonly mistaken for another. Double check that the correct word is used.'
         },
         pronoun: {
           name: 'pronoun',
           regex: /\b(he|she|it|they|we|you|I|that|this)\b/gi,
           title: 'Double check that it is clear what this pronoun refers to and that you don\'t have too many close together.'
+        },
+        toBeVerbs: {
+          name: 'to-be-verbs',
+          regex: /\b(am|is|are|was|were|be|been|being|[a-z]+'s)\b/gi,
+          title: 'Avoid &quot;to be verbs&quot; that only convey existence and not action.  See if you can you identify a stronger verb.'
         }
       };
 
