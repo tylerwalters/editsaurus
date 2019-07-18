@@ -60,6 +60,9 @@
                 </label>
               </div>
               <div class="check-box-options">
+                <label for="check-to-be-verbs" class="checkbox to-be-verbs" data-tooltip="Highlights possible instances of to be verbs.">
+                  <input id="check-to-be-verbs" type="checkbox" value="toBeVerbs" ng-click="toggleCheck('toBeVerbs')" checked><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; To Be Verbs
+                </label>
                 <label for="check-lexical" class="checkbox lexical-illusions" data-tooltip="Highlights possible lexical illusions (duplicate words).">
                   <input id="check-lexical" type="checkbox" value="lexicalIllusions" ng-click="toggleCheck('lexicalIllusions')" checked><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Lexical Illusions
                 </label>
@@ -68,9 +71,6 @@
                 </label>
                 <label for="pronoun" class="checkbox pronoun" data-tooltip="Highlights pronouns so they can be double checked for clarity.">
                   <input id="pronoun" type="checkbox" value="pronoun" ng-click="toggleCheck('pronoun')"><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Pronouns
-                </label>
-                <label for="check-to-be-verbs" class="checkbox to-be-verbs" data-tooltip="Highlights possible instances of to be verbs.">
-                  <input id="check-to-be-verbs" type="checkbox" value="toBeVerbs" ng-click="toggleCheck('toBeVerbs')" checked><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; To Be Verbs
                 </label>
               </div>
             </div>
@@ -94,10 +94,10 @@
           <li class="filler-words" ng-class="{'active': currentDefinition === 'filler-words'}" ng-click="currentDefinition = 'filler-words'">Filler Words</li>
           <li class="redundant-words" ng-class="{'active': currentDefinition === 'redundant-words'}" ng-click="currentDefinition = 'redundant-words'">Redundant Words</li>
           <li class="passive-voice" ng-class="{'active': currentDefinition == 'passive-voice'}" ng-click="currentDefinition = 'passive-voice'">Passive Voice</li>
+          <li class="to-be-verbs" ng-class="{'active': currentDefinition == 'to-be-verbs'}" ng-click="currentDefinition = 'to-be-verbs'">To Be Verbs</li>
           <li class="lexical-illusions" ng-class="{'active': currentDefinition == 'lexical-illusions'}" ng-click="currentDefinition = 'lexical-illusions'">Lexical Illusions</li>
           <li class="misused-words" ng-class="{'active': currentDefinition == 'misused-words'}" ng-click="currentDefinition = 'misused-words'">Common Misused Words</li>
           <li class="pronoun" ng-class="{'active': currentDefinition == 'pronoun'}" ng-click="currentDefinition = 'pronoun'">Pronouns</li>
-          <li class="to-be-verbs" ng-class="{'active': currentDefinition == 'to-be-verbs'}" ng-click="currentDefinition = 'to-be-verbs'">To Be Verbs</li>
         </ul>
       </div>
     </div>
