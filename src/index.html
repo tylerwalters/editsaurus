@@ -52,11 +52,11 @@
                 <label for="check-filler" class="checkbox filler-words" data-tooltip="Highlights words that may be unnecessary and not add anything of value.">
                   <input id="check-filler" type="checkbox" value="fillerWords" ng-click="toggleCheck('fillerWords')" checked><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Filler Words
                 </label>
+                <label for="redundant-words" class="checkbox redundant-words" data-tooltip="Highlights redundant words that may be unnecessary and not add anything of value.">
+                  <input id="redundant-words" type="checkbox" value="redundant" ng-click="toggleCheck('redundantWords')" checked><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Redundant Words
+                </label>
                 <label for="check-passive" class="checkbox passive-voice" data-tooltip="Highlights possible instances of passive voice.">
                   <input id="check-passive" type="checkbox" value="passiveVoice" ng-click="toggleCheck('passiveVoice')" checked><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Passive Voice
-                </label>
-                <label for="check-to-be-verbs" class="checkbox to-be-verbs" data-tooltip="Highlights possible instances of to be verbs.">
-                  <input id="check-to-be-verbs" type="checkbox" value="toBeVerbs" ng-click="toggleCheck('toBeVerbs')" checked><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; To Be Verbs
                 </label>
               </div>
               <div class="check-box-options">
@@ -68,6 +68,9 @@
                 </label>
                 <label for="pronoun" class="checkbox pronoun" data-tooltip="Highlights pronouns so they can be double checked for clarity.">
                   <input id="pronoun" type="checkbox" value="pronoun" ng-click="toggleCheck('pronoun')"><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Pronouns
+                </label>
+                <label for="check-to-be-verbs" class="checkbox to-be-verbs" data-tooltip="Highlights possible instances of to be verbs.">
+                  <input id="check-to-be-verbs" type="checkbox" value="toBeVerbs" ng-click="toggleCheck('toBeVerbs')" checked><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; To Be Verbs
                 </label>
               </div>
             </div>
@@ -89,6 +92,7 @@
         <ul itemprop="featureList">
           <li class="adverb" ng-class="{'active': currentDefinition === 'adverb'}" ng-click="currentDefinition = 'adverb'">Adverbs</li>
           <li class="filler-words" ng-class="{'active': currentDefinition === 'filler-words'}" ng-click="currentDefinition = 'filler-words'">Filler Words</li>
+          <li class="redundant-words" ng-class="{'active': currentDefinition === 'redundant-words'}" ng-click="currentDefinition = 'redundant-words'">Redundant Words</li>
           <li class="passive-voice" ng-class="{'active': currentDefinition == 'passive-voice'}" ng-click="currentDefinition = 'passive-voice'">Passive Voice</li>
           <li class="lexical-illusions" ng-class="{'active': currentDefinition == 'lexical-illusions'}" ng-click="currentDefinition = 'lexical-illusions'">Lexical Illusions</li>
           <li class="misused-words" ng-class="{'active': currentDefinition == 'misused-words'}" ng-click="currentDefinition = 'misused-words'">Common Misused Words</li>
@@ -116,6 +120,13 @@
           <p>These words rarely add anything of value to your writing. They inflate the word count at the cost of readability. You can make your writing leaner and more precise by omitting as filler words when possible.</p>
           <p>You could add more words to this list. Also, not every occurrence of a word on this list is going to need to be removed either. This check is a quick reference. Start by considering whether you need these words and apply that mentality throughout your writing. </p>
           <p>Further reading: <a href="http://writingcenter.unc.edu/handouts/style/">Style at UNC Writing Center</a> (read the section on wordiness)</p>
+        </div>
+        <div class="redundant-words-description description" ng-class="{'active': currentDefinition === 'redundant-words'}">
+          <h2>Redundant Words</h2>
+          <ul>
+            <li>Pleonasms: the use of more words than are necessary to convey meaning (e.g. see with one's eyes), either as a fault of style or for emphasis.</li>
+          </ul>
+          <p>We can cut clutter in our writing by eliminate repetitious expressions. They can be overlooked because we often see and hear redundancies, such as "free gifts" and "12 noon".  We should lookout for needless repetition and eliminate expressions which add no additional value.</p>
         </div>
         <div class="passive-voice-description description" ng-class="{'active': currentDefinition === 'passive-voice'}">
           <h2>Passive Voice</h2>

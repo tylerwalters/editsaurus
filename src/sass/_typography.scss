@@ -48,32 +48,39 @@ h2, .h2 {
 }
 
 .adverb {
-	background-color: #5ee6d4;
+	background-color: #FF9999;
 }
 
 .filler-words {
-	background-color: #9af0b6;
+	background-color: #FFCC99;
+}
+
+.redundant-words {
+	background-color: #FFFF99;
 }
 
 .passive-voice {
-	background-color: #5ec3e0;
-}
-
-.pronoun {
-	background-color: #a285d7;
+	background-color: #CCFF99;
 }
 
 .lexical-illusions {
-	background-color: #d07e5a;
+	background-color: #99FF99;
 }
 
 .misused-words {
-	background-color: #d45f74;
+	background-color: #99FFCC;
+}
+
+.pronoun {
+	background-color: #99FFFF;
 }
 
 .to-be-verbs {
-	background-color: #d4b615;
+	background-color: #99CCFF;
 }
+
+// See: https://www.rapidtables.com/web/color/Web_Color.html
+// future colors: #9999FF #CC99FF #FF99FF #FF99CC #E0E0E0
 
 .ui-tooltip {
 	background-color: $main-bg-color-lighter;
