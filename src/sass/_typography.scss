@@ -71,16 +71,20 @@ h2, .h2 {
 	background-color: #99FFCC;
 }
 
-.misused-words {
+.nominalizations {
 	background-color: #99FFFF;
 }
 
-.pronoun {
+.misused-words {
 	background-color: #99CCFF;
 }
 
+.pronoun {
+	background-color: #9999FF;
+}
+
 // See: https://www.rapidtables.com/web/color/Web_Color.html
-// future colors: #9999FF #CC99FF #FF99FF #FF99CC #E0E0E0
+// future colors:  #CC99FF #FF99FF #FF99CC #E0E0E0
 
 .ui-tooltip {
 	background-color: $main-bg-color-lighter;

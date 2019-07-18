@@ -58,13 +58,16 @@
                 <label for="check-passive" class="checkbox passive-voice" data-tooltip="Highlights possible instances of passive voice.">
                   <input id="check-passive" type="checkbox" value="passiveVoice" ng-click="toggleCheck('passiveVoice')" checked><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Passive Voice
                 </label>
-              </div>
-              <div class="check-box-options">
                 <label for="check-to-be-verbs" class="checkbox to-be-verbs" data-tooltip="Highlights possible instances of to be verbs.">
-                  <input id="check-to-be-verbs" type="checkbox" value="toBeVerbs" ng-click="toggleCheck('toBeVerbs')" checked><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; To Be Verbs
+                  <input id="check-to-be-verbs" type="checkbox" value="toBeVerbs" ng-click="toggleCheck('toBeVerbs')"><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; To Be Verbs
                 </label>
                 <label for="check-lexical" class="checkbox lexical-illusions" data-tooltip="Highlights possible lexical illusions (duplicate words).">
                   <input id="check-lexical" type="checkbox" value="lexicalIllusions" ng-click="toggleCheck('lexicalIllusions')" checked><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Lexical Illusions
+                </label>
+              </div>
+              <div class="check-box-options">
+                <label for="check-nominalizations" class="checkbox nominalizations" data-tooltip="Highlights possible nominalizations (verbs as nouns).">
+                  <input id="check-nominalizations" type="checkbox" value="nominalizations" ng-click="toggleCheck('nominalizations')"><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Nominalizations
                 </label>
                 <label for="check-misused" class="checkbox misused-words" data-tooltip="Highlights common mistaken words. (there/their/they're, your/you're, its/it's, whose/who's">
                   <input id="check-misused" type="checkbox" value="misusedWords" ng-click="toggleCheck('misusedWords')"><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Misused Words
@@ -96,6 +99,7 @@
           <li class="passive-voice" ng-class="{'active': currentDefinition == 'passive-voice'}" ng-click="currentDefinition = 'passive-voice'">Passive Voice</li>
           <li class="to-be-verbs" ng-class="{'active': currentDefinition == 'to-be-verbs'}" ng-click="currentDefinition = 'to-be-verbs'">To Be Verbs</li>
           <li class="lexical-illusions" ng-class="{'active': currentDefinition == 'lexical-illusions'}" ng-click="currentDefinition = 'lexical-illusions'">Lexical Illusions</li>
+          <li class="nominalizations" ng-class="{'active': currentDefinition == 'nominalizations'}" ng-click="currentDefinition = 'nominalizations'">Nominalizations</li>
           <li class="misused-words" ng-class="{'active': currentDefinition == 'misused-words'}" ng-click="currentDefinition = 'misused-words'">Common Misused Words</li>
           <li class="pronoun" ng-class="{'active': currentDefinition == 'pronoun'}" ng-click="currentDefinition = 'pronoun'">Pronouns</li>
         </ul>
@@ -143,6 +147,13 @@
             <li>duplicate words</li>
           </ul>
           <p>A lexical illusion is a duplicate word our brains filter out when going from one line to the next. This makes catching these issues when reading or editing difficult. This check highlights any duplicate words to allow you to check that they are correct.</p>
+        </div>
+        <div class="nominalizations-description description" ng-class="{'active': currentDefinition === 'nominalizations'}">
+          <h2>Nominalizations</h2>
+          <ul>
+            <li>verbs as nouns</li>
+          </ul>
+          <p>A Nominalization is the use of a non-noun word as a noun. Strong writing uses verbs rather than turning them into nouns. This check highlights some verbs which are being used as nouns.</p>
         </div>
         <div class="misused-words-description description" ng-class="{'active': currentDefinition === 'misused-words'}">
           <h2>Common Misused Words</h2>

@@ -12,7 +12,7 @@ angular.module('editSaurus')
 
       var timer;
 
-      $scope.selectedChecks = ['adverb', 'fillerWords', 'redundantWords', 'passiveVoice', 'lexicalIllusions', 'toBeVerbs'];
+      $scope.selectedChecks = ['adverb', 'fillerWords', 'redundantWords', 'passiveVoice', 'lexicalIllusions'];
       $scope.output = '<p>Checked text copy will go here.</p>';
       $scope.input = angular.element($element[0].querySelector('#writing-check-input'));
 
@@ -104,6 +104,11 @@ angular.module('editSaurus')
           name: 'lexical-illusions',
           regex: /\b(\w+)\b\s+\1\b/gi,
           title: 'This may be a lexical illusion. Double check that the repeated word was intentional.'
+        },
+        nominalizations: {
+          name: 'nominalizations',
+          regex: /\b(achievement|achievements|action|actions|agreement|agreements|appearance|appearances|application|applications|approval|approvals|arrival|arrivals|assessment|assessments|beginning|beginnings|commitment|commitments|communication|communications|conclusion|conclusions|confirmation|confirmations|consideration|considerations|consultation|consultations|continuation|continuations|contribution|contributions|decision|decisions|definition|definitions|demonstration|demonstrations|description|descriptions|determination|determinations|development|developments|discussion|discussions|donation|donations|editing|editings|employment|employments|enhancement|enhancements|enrolment, re-enrolment|enrolment, re-enrolments|evaluation|evaluations|examination|examinations|expectation|expectations|explanation|explanations|implementation|implementations|implication|implications|indication|indications|inspection|inspections|instruction|instructions|intention|intentions|introduction|introductions|investigation|investigations|leadership|leaderships|mentoring|mentorings|notification|notifications|objection|objections|observation|observations|ownership|ownerships|payment|payments|performance|performances|prioritisation|prioritisations|progression|progressions|reaction|reactions|recommendation|recommendations|reduction|reductions|referral|referrals|reformation|reformations|refusal|refusals|rejection|rejections|relocation|relocations|replacement|replacements|requirement|requirements|resistance|resistances|resolution|resolutions|revision|revisions|ruling|rulings|solution|solutions|statement|statements|submission|submissions|suggestion|suggestions|training|trainings|transformation|transformations|transition|transitions|translation|translations|undertaking|undertakings)\b/gi,
+          title: 'This may be a nominalizations (verb as a noun). Consider changing the noun to a verb.'
         },
         misusedWords: {
           name: 'misused-words',
