@@ -75,6 +75,9 @@
                 <label for="pronoun" class="checkbox pronoun" data-tooltip="Highlights pronouns so they can be double checked for clarity.">
                   <input id="pronoun" type="checkbox" value="pronoun" ng-click="toggleCheck('pronoun')"><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Pronouns
                 </label>
+                <label for="pompous-words" class="checkbox pompous-words" data-tooltip="Highlights pompous words/phrases that may have an easier alternative.">
+                  <input id="pompous-words" type="checkbox" value="pompousWords" ng-click="toggleCheck('pompousWords')"><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Pompous Words
+                </label>
               </div>
             </div>
           </fieldset>
@@ -102,6 +105,7 @@
           <li class="nominalizations" ng-class="{'active': currentDefinition == 'nominalizations'}" ng-click="currentDefinition = 'nominalizations'">Nominalizations</li>
           <li class="misused-words" ng-class="{'active': currentDefinition == 'misused-words'}" ng-click="currentDefinition = 'misused-words'">Common Misused Words</li>
           <li class="pronoun" ng-class="{'active': currentDefinition == 'pronoun'}" ng-click="currentDefinition = 'pronoun'">Pronouns</li>
+          <li class="pompous-words" ng-class="{'active': currentDefinition == 'pompous-words'}" ng-click="currentDefinition = 'pompous-words'">Pompous Words</li>
         </ul>
       </div>
     </div>
@@ -178,6 +182,14 @@
           </ul>
           <p>This test highlights "to be verbs" in your writing. This allows you to check the to be verbs for clarity. Avoid weak to be verbs that only convey existence and not action. </p>
           <p>Further reading: <a href="https://www.grammar.com/verb-to-be/">Verb "To Be"</a></p>
+        </div>
+        <div class="pompous-words-description description" ng-class="{'active': currentDefinition === 'pompous-words'}">
+          <h2>Pompous Words</h2>
+          <ul>
+            <li>notwithstanding vs despite</li>
+          </ul>
+          <p>This test highlights words hard or pompous words in your writing. Look to use 'every-day' english instead.</p>
+          <p>Further reading: <a href="http://www.plainenglish.co.uk/the-a-z-of-alternative-words.html">Plain English words</a></p>
         </div>
       </div>
     </div>
