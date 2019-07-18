@@ -78,6 +78,9 @@
                 <label for="pompous-words" class="checkbox pompous-words" data-tooltip="Highlights pompous words/phrases that may have an easier alternative.">
                   <input id="pompous-words" type="checkbox" value="pompousWords" ng-click="toggleCheck('pompousWords')"><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Pompous Words
                 </label>
+                <label for="negative-words" class="checkbox negative-words" data-tooltip="Highlights negative words that may be rephrased in a positive way.">
+                  <input id="negative-words" type="checkbox" value="negativeWords" ng-click="toggleCheck('pompousWords')"><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Negative Words
+                </label>
               </div>
             </div>
           </fieldset>
@@ -106,6 +109,7 @@
           <li class="misused-words" ng-class="{'active': currentDefinition == 'misused-words'}" ng-click="currentDefinition = 'misused-words'">Common Misused Words</li>
           <li class="pronoun" ng-class="{'active': currentDefinition == 'pronoun'}" ng-click="currentDefinition = 'pronoun'">Pronouns</li>
           <li class="pompous-words" ng-class="{'active': currentDefinition == 'pompous-words'}" ng-click="currentDefinition = 'pompous-words'">Pompous Words</li>
+          <li class="negative-words" ng-class="{'active': currentDefinition == 'negative-words'}" ng-click="currentDefinition = 'negative-words'">Negative Words</li>
         </ul>
       </div>
     </div>
@@ -190,6 +194,13 @@
           </ul>
           <p>This test highlights words hard or pompous words in your writing. Look to use 'every-day' english instead.</p>
           <p>Further reading: <a href="http://www.plainenglish.co.uk/the-a-z-of-alternative-words.html">Plain English words</a></p>
+        </div>
+        <div class="negative-words-description description" ng-class="{'active': currentDefinition === 'negative-words'}">
+          <h2>Negative Words</h2>
+          <ul>
+            <li>I’m not lying to you.</li>
+          </ul>
+          <p>This test highlights words which can have a negative tone to thenm.  Look for positive language to replace negative (e.g. “I’m not lying to you” vs “I’m telling the truth.”).</p>
         </div>
       </div>
     </div>

@@ -83,12 +83,16 @@ h2, .h2 {
 	background-color: #9999FF;
 }
 
-.pompous-words   {
+.pompous-words {
 	background-color: #CC99FF;
 }
 
+.negative-words {
+	background-color: #FF99FF;
+}
+
 // See: https://www.rapidtables.com/web/color/Web_Color.html
-// future colors:   #FF99FF #FF99CC #E0E0E0
+// future colors: #FF99CC #E0E0E0
 
 .ui-tooltip {
 	background-color: $main-bg-color-lighter;
