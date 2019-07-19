@@ -79,7 +79,7 @@
                   <input id="pompous-words" type="checkbox" value="pompousWords" ng-click="toggleCheck('pompousWords')"><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Pompous Words
                 </label>
                 <label for="negative-words" class="checkbox negative-words" data-tooltip="Highlights negative words that may be rephrased in a positive way.">
-                  <input id="negative-words" type="checkbox" value="negativeWords" ng-click="toggleCheck('pompousWords')"><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Negative Words
+                  <input id="negative-words" type="checkbox" value="negativeWords" ng-click="toggleCheck('negativeWords')"><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Negative Words
                 </label>
               </div>
             </div>
@@ -200,7 +200,12 @@
           <ul>
             <li>I’m not lying to you.</li>
           </ul>
-          <p>This test highlights words which can have a negative tone to thenm.  Look for positive language to replace negative (e.g. “I’m not lying to you” vs “I’m telling the truth.”).</p>
+            <p>This test highlights words which can have a negative tone to them.  Look for positive language to replace negative (e.g. "I’m <i>not lying</i> to you" vs "I’m telling the truth.").</p>
+            <p>Other Examples:</p>
+            <ul>
+                <li>"Our testing is <i>flawless</i>" vs "Our testing is <i>thorough</i>"</li>
+                <li>"You <i>won't</i> find a better fit" vs "Our product is a perfect fit"</li>
+            </ul>
         </div>
       </div>
     </div>
