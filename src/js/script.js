@@ -115,7 +115,7 @@ angular.module('editSaurus')
         },
         nominalizations: {
           name: 'nominalizations',
-          regex: new RegExp('\\b(' + Object.keys(nominalizations).join('|') + ')', "gi"),
+          regex: new RegExp('\\b(' + Object.keys(nominalizations).join('|') + ')\\b', "gi"),
           title: function(word){
             return 'This may be a nominalization (verb as a noun). Consider changing the noun to a verb (e.g. ' + nominalizations[word] + ').';
           }
@@ -132,7 +132,7 @@ angular.module('editSaurus')
         },
         pompousWords: {
           name: 'pompous-words',
-          regex: new RegExp('\\b(' + Object.keys(pompousWords).join('|') + ')', "gi"),
+          regex: new RegExp('\\b(' + Object.keys(pompousWords).join('|') + ')\\b', "gi"),
           title: function(word){
               return 'Consider a simpler alternative (e.g. ' + pompousWords[word] + ').';
           }
