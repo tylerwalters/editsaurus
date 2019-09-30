@@ -35,6 +35,11 @@ gulp.task('js-min', function () {
     .pipe(gulp.dest('dist/js'));
 });
 
+gulp.task('copy-js', function () {
+  return gulp.src(['src/js/jquery-1.8.1.min.js', 'src/js/cliches.js', 'src/js/countwordsworth.js', 'src/js/dalechallwordlist.js', 'src/js/prepositions.js'])
+             .pipe(gulp.dest('dist/js'));
+});
+
 gulp.task('copy', function () {
   return gulp.src(['src/worker.js', 'src/serviceworker-cache-polyfill.js', 'src/manifest.json'])
     .pipe(gulp.dest('dist'));
@@ -58,4 +63,4 @@ gulp.task('watch', function () {
   gulp.watch('src/index.html', ['copy-index']);
 });
 
-gulp.task('build', ['lint', 'sass', 'js-min', 'copy', 'copy-index', 'copy-images']);
+gulp.task('build', ['lint', 'sass', 'js-min', 'copy-js', 'copy', 'copy-index', 'copy-images']);

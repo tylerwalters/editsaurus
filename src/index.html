@@ -12,6 +12,9 @@
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
   <link rel="icon" href="images/favicon.png" type="image/x-icon">
 
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300|Gentium+Book+Basic:400,700,400italic' rel='stylesheet' type='text/css'>
+  <script src="js/jquery-1.8.1.min.js"></script>
+  
   <link rel="stylesheet" href="../dist/css/style.min.css" inline>
 
   <link rel="preload" href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" as="style" onload="this.rel='stylesheet'">
@@ -59,7 +62,7 @@
                   <input id="check-passive" type="checkbox" value="passiveVoice" ng-click="toggleCheck('passiveVoice')" checked><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Passive Voice
                 </label>
                 <label for="check-to-be-verbs" class="checkbox to-be-verbs" data-tooltip="Highlights possible instances of to be verbs.">
-                  <input id="check-to-be-verbs" type="checkbox" value="toBeVerbs" ng-click="toggleCheck('toBeVerbs')"><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; To Be Verbs
+                  <input id="check-to-be-verbs" type="checkbox" value="toBeVerbs" ng-click="toggleCheck('toBeVerbs')" checked><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; To Be Verbs
                 </label>
                 <label for="check-lexical" class="checkbox lexical-illusions" data-tooltip="Highlights possible lexical illusions (duplicate words).">
                   <input id="check-lexical" type="checkbox" value="lexicalIllusions" ng-click="toggleCheck('lexicalIllusions')" checked><i class="fa fa-question-circle fa-inverse pull-right"></i>&nbsp; Lexical Illusions
@@ -122,6 +125,11 @@
           </ul>
           <p>It is well known that Ernest Hemingway avoided adverbs. His minimalist style didn't have room for superfluous words. Steven King said, "I believe the road to hell is paved with adverbs, and I will shout it from the rooftops," in his book 'On Writing'. </p>
           <p>Adverbs tend to be unnecessary. They can be redundant, slow down the action, or amplify verbs that don't need to be amplified. You can often replace an adverb and the verb it modifies with a stronger verb or, if the verb is strong enough to stand alone anyway, remove the adverb and leave the verb intact.</p>
+          <ul><li><em>She <u>looked sternly</u> at her classmate. </em>versus</li><li><em>She <u>glared</u> at her classmate.</em></li></ul>
+          or,
+          <ul><li><em>The mouse <u>ran quickly</u> through the forest.</em> versus</li><li><em>The mouse <u>scampered</u> through the forest. </em></li></ul>
+          or,
+          <ul><li><em>The politician <u>listened secretly</u> while the opposing side discussed their plans.</em> versus</li><li><em>The politician <u>eavesdropped</u> while the opposing side discussed their plans.</em></li></ul>
           <p>Further reading: <a href="http://www.quickanddirtytips.com/education/grammar/how-to-eliminate-adverbs">How to Eliminate Adverbs</a></p>
         </div>
         <div class="filler-words-description description" ng-class="{'active': currentDefinition === 'filler-words'}">
@@ -182,9 +190,10 @@
         <div class="to-be-verbs-description description" ng-class="{'active': currentDefinition === 'to-be-verbs'}">
           <h2>To Be Verbs</h2>
           <ul>
-            <li>am, is, are, was, were, be, been, being</li>
+            <li>am, is, are, was, were, be, been, being, have, has, had, do, does, did, shall, will, should, would, may, might, must, can, could</li>
           </ul>
           <p>This test highlights "to be verbs" in your writing. This allows you to check the to be verbs for clarity. Avoid weak to be verbs that only convey existence and not action. </p>
+          <ul><li><em>Determining when a student <u>is</u> a problem makes the teacher’s job more interesting.</em></li><li><em>Determining when a student <u>creates</u> a problem makes the teacher’s job more interesting.</em></li></ul>
           <p>Further reading: <a href="https://www.grammar.com/verb-to-be/">Verb "To Be"</a></p>
         </div>
         <div class="pompous-words-description description" ng-class="{'active': currentDefinition === 'pompous-words'}">
@@ -236,6 +245,289 @@
   </div>
 </div>
 
+
+
+
+
+<div>
+  <textarea id="page" placeholder="Paste here, scroll down."></textarea>
+  <div id="stats-container">
+    <div class="word-count main-stat">0</div>
+    <div class="main-stat-text"><h1>words</h1></div>
+    <div id="minor-stats-container">
+      <table>
+        <tbody><tr>
+          <td><div class="minor-stat"><span class="cliche-count">0</span> clichés<span class="beta-text">APPROX.</span></div></td>
+          <td><div class="minor-stat"><span class="character-count">0</span> characters</div></td>
+        </tr>
+        <tr>
+          <td><div class="minor-stat"><span class="avg-words-per-sentence-count">0</span> words per sentence (avg)</div></td>
+          <td><div class="minor-stat"><span class="wordletter-count">0</span> letters per word</div></td>
+        </tr>
+        <tr>
+          <td><div class="minor-stat"><span class="sentence-count">0</span> sentences</div></td>
+          <td><div class="minor-stat"><span class="alphanumeric-count">0</span> alphanumeric characters</div></td>
+        </tr>
+        <tr>
+          <td><div class="minor-stat"><span class="preposition-count">0</span> prepositions<span class="beta-text">APPROX.</span></div></td>
+          <td><div class="minor-stat"><span class="paragraph-count">0</span> paragraphs</div></td>
+        </tr>
+        <tr>
+          <td><div class="minor-stat"><span class="article-count">0</span> articles</div></td>
+          <td><div class="minor-stat"><span class="paragraph-word-count">0</span> words per paragraph</div></td>
+        </tr>
+        <tr>
+          <td><div class="minor-stat"><span class="letters-per-sentence">0</span> letters per sentence</div></td>
+          <td><div class="minor-stat"><span class="syllables-per-sentence">0</span> syllables per sentence<span class="beta-text">APPROX.</span></div></td>
+        </tr>
+        <tr>
+          <td><div class="minor-stat"><span class="syllables-per-word">0</span> syllables per word<span class="beta-text">APPROX.</span></div></td>
+          <td><div class="minor-stat"><span class="syllables-count">0</span> syllables, total<span class="beta-text">APPROX.</span></div></td>
+        </tr>
+        <tr>
+          <td><div class="minor-stat"><span class="alpha-count">0</span> letters, total</div></td>
+          <td><div class="minor-stat"><span class="word-count">0</span> words, total</div></td>
+        </tr>
+        <tr>
+          <td><div class="minor-stat"><span class="page-count-paperback">0</span> printed pages (Paperback)</div></td>
+          <td><div class="minor-stat"><span class="page-count-a4">0</span> printed pages (A4)</div></td>
+        </tr>
+        <tr>
+          <td><div class="minor-stat"><span class="to-be-verbs-count">0</span> "to be" verbs</div></td>
+          <td><div class="minor-stat"><span class="pause-count">0</span> pauses</div></td>
+        </tr>
+        <tr>
+          <td><div class="minor-stat"><span class="words-between-pauses">0</span> words between pauses</div></td>
+          <td><div class="minor-stat"><span class="syllables-between-pauses">0</span> syllables between pauses</div></td>
+        </tr>
+        <tr>
+          <td><div class="minor-stat"><span class="pauses-per-sentence">0</span> pauses per sentence</div></td>
+          <td><div class="minor-stat"><span class="pronoun-count">0</span> pronouns<span class="beta-text">BETA</span></div></td>
+        </tr>
+        <tr>
+          <td><div class="minor-stat"><span class="contraction-count">0</span> contractions<span class="beta-text">BETA</span></div></td>
+          <td><div class="minor-stat"><span class="simile-count">0</span> similes<span class="beta-text">BETA</span></div></td>
+        </tr>
+        <tr>
+          <td><div class="minor-stat"><span class="max-words-per-sentence-count">0</span> max sentence length (words)</div></td>
+          <td><div class="minor-stat"><span class="min-words-per-sentence-count">0</span> min sentence length (words)</div></td>
+        </tr>
+        <tr>
+          <td><div class="minor-stat"><span class="question-count">0</span> questions</div></td>
+          <td><div class="minor-stat"><span class="question-sentence-ratio">0</span> question:sentence ratio</div></td>
+        </tr>
+        <tr>
+          <td><div class="minor-stat"><span class="unique-word-count">0</span> unique words</div></td>
+          <td><div class="minor-stat"><!--<a href="mailto:hello@josephrocca.com?subject=Count Wordsworth Stat Request&body=Thanks for your interest! Just shoot those ideas at me below:" style="color:#e36c31;border:none;">+ Request another stat or feature...</a>--></div></td>
+        </tr>
+        </tbody></table>
+    </div>
+
+    <div class="word-frequency-container">
+      <p class="title">Most used words &amp; phrases:</p>
+      <table>
+        <tbody><tr>
+          <td>Nothing yet.</td>
+        </tr>
+        </tbody></table>
+      <p class="more-freq-word-button">+ More words...</p>
+    </div>
+
+    <div class="personal-pronouns">
+      <p><span class="first"><span style="font-size:170%;font-weight:bold">0</span>% First person</span>, <span class="second"><span style="font-size:170%;font-weight:bold">0</span>% Second person</span>, <span class="third"><span style="font-size:170%;font-weight:bold">0</span>% Third person</span></p>
+    </div>
+
+    <div class="letter-frequencies">
+      <div class="letter a">
+        <div class="wrapper">
+          <div data-number="0" data-letter="a" class="bar"></div>a
+        </div>
+      </div>
+      <div class="letter b">
+        <div class="wrapper">
+          <div data-number="0" data-letter="b" class="bar"></div>b
+        </div>
+      </div>
+      <div class="letter c">
+        <div class="wrapper">
+          <div data-number="0" data-letter="c" class="bar"></div>c
+        </div>
+      </div>
+      <div class="letter d">
+        <div class="wrapper">
+          <div data-number="0" data-letter="d" class="bar"></div>d
+        </div>
+      </div>
+      <div class="letter e">
+        <div class="wrapper">
+          <div data-number="0" data-letter="e" class="bar"></div>e
+        </div>
+      </div>
+      <div class="letter f">
+        <div class="wrapper">
+          <div data-number="0" data-letter="f" class="bar"></div>f
+        </div>
+      </div>
+      <div class="letter g">
+        <div class="wrapper">
+          <div data-number="0" data-letter="g" class="bar"></div>g
+        </div>
+      </div>
+      <div class="letter h">
+        <div class="wrapper">
+          <div data-number="0" data-letter="h" class="bar"></div>h
+        </div>
+      </div>
+      <div class="letter i">
+        <div class="wrapper">
+          <div data-number="0" data-letter="i" class="bar"></div>i
+        </div>
+      </div>
+      <div class="letter j">
+        <div class="wrapper">
+          <div data-number="0" data-letter="j" class="bar"></div>j
+        </div>
+      </div>
+      <div class="letter k">
+        <div class="wrapper">
+          <div data-number="0" data-letter="k" class="bar"></div>k
+        </div>
+      </div>
+      <div class="letter l">
+        <div class="wrapper">
+          <div data-number="0" data-letter="l" class="bar"></div>l
+        </div>
+      </div>
+      <div class="letter m">
+        <div class="wrapper">
+          <div data-number="0" data-letter="m" class="bar"></div>m
+        </div>
+      </div>
+      <div class="letter n">
+        <div class="wrapper">
+          <div data-number="0" data-letter="n" class="bar"></div>n
+        </div>
+      </div>
+      <div class="letter o">
+        <div class="wrapper">
+          <div data-number="0" data-letter="o" class="bar"></div>o
+        </div>
+      </div>
+      <div class="letter p">
+        <div class="wrapper">
+          <div data-number="0" data-letter="p" class="bar"></div>p
+        </div>
+      </div>
+      <div class="letter q">
+        <div class="wrapper">
+          <div data-number="0" data-letter="q" class="bar"></div>q
+        </div>
+      </div>
+      <div class="letter r">
+        <div class="wrapper">
+          <div data-number="0" data-letter="r" class="bar"></div>r
+        </div>
+      </div>
+      <div class="letter s">
+        <div class="wrapper">
+          <div data-number="0" data-letter="s" class="bar"></div>s
+        </div>
+      </div>
+      <div class="letter t">
+        <div class="wrapper">
+          <div data-number="0" data-letter="t" class="bar"></div>t
+        </div>
+      </div>
+      <div class="letter u">
+        <div class="wrapper">
+          <div data-number="0" data-letter="u" class="bar"></div>u
+        </div>
+      </div>
+      <div class="letter v">
+        <div class="wrapper">
+          <div data-number="0" data-letter="v" class="bar"></div>v
+        </div>
+      </div>
+      <div class="letter w">
+        <div class="wrapper">
+          <div data-number="0" data-letter="w" class="bar"></div>w
+        </div>
+      </div>
+      <div class="letter x">
+        <div class="wrapper">
+          <div data-number="0" data-letter="x" class="bar"></div>x
+        </div>
+      </div>
+      <div class="letter y">
+        <div class="wrapper">
+          <div data-number="0" data-letter="y" class="bar"></div>y
+        </div>
+      </div>
+      <div class="letter z">
+        <div class="wrapper">
+          <div data-number="0" data-letter="z" class="bar"></div>z
+        </div>
+      </div>
+      <p class="mouse-over-stat"><b>0</b> letters</p>
+    </div>
+
+
+
+    <div id="readability-container">
+      <p class="title">Readability Scores:</p>
+      <p class="flesch"><img class="bullet" src="images/bullet4square.png" alt="">Flesch Reading Ease<img class="line" style="width:100px;" src="images/line.png" alt=""> <span class="score">0</span></p>
+      <p class="flesch-kincaid"><img class="bullet" src="images/bullet4square.png" alt="">Flesch–Kincaid Grade Level<img class="line" style="width:49px;" src="images/line.png" alt=""> <span class="score">0</span></p>
+      <p class="dale-chall"><img class="bullet" src="images/bullet4square.png" alt="">Dale-Chall Formula<img class="line" style="width:110px;" src="images/line.png" alt=""> <span class="score">0</span></p>
+      <p class="gunning-fog"><img class="bullet" src="images/bullet4square.png" alt="">Gunning Fog Index<img class="line" style="width:111px;" src="images/line.png" alt=""> <span class="score">0</span></p>
+      <p class="forecast"><img class="bullet" src="images/bullet4square.png" alt="">FORECAST Grade Level<img class="line" style="width:78px;" src="images/line.png" alt=""> <span class="score">0</span></p>
+      <p class="info"><a href="https://en.wikipedia.org/wiki/Readability" target="_blank">What are these?</a></p>
+    </div>
+
+    <!-- STANDARD DEVIATION STUFF -->
+    <div class="stdev-container" style="margin-top: 130px;">
+      <p class="title">Standard Deviations:</p>
+      <div id="minor-stats-container" style="margin-top: 20px;">
+        <table>
+          <tbody><tr>
+            <td><div class="minor-stat">characters per sentence: <span class="sentence-len-stdev">0</span></div></td>
+            <td><div class="minor-stat">words per sentence: <span class="words-per-sentence-stdev">0</span></div></td>
+          </tr>
+          </tbody></table>
+      </div>
+      <br><br><br><br><br><br>
+
+    </div>
+
+
+    <div class="other-counters">
+      <p class="link"><a href="/letters">letters</a></p>
+      <p class="link"><a href="/characters">characters</a></p>
+      <p class="link"><a href="/syllables">syllables</a></p>
+      <p class="link"><a href="/paragraphs">paragraphs</a></p>
+      <p class="link"><a href="/cliches">cliches</a></p>
+      <p class="link"><a href="/wordspersentence">words per sentence</a></p>
+      <p class="link"><a href="/sentences">sentences</a></p>
+      <p class="link"><a href="/prepositions">prepositions</a></p>
+      <p class="link"><a href="/letterspersentence">letters per sentence</a></p>
+      <p class="link"><a href="/syllablesperword">syllables per word</a></p>
+      <p class="link"><a href="/lettersperword">letters per word</a></p>
+      <p class="link"><a href="/alphanumericcharacters">alpha-numeric characters</a></p>
+      <p class="link"><a href="/wordsperparagraph">words per paragraph</a></p>
+      <p class="link"><a href="/syllablespersentence">syllables per sentence</a></p>
+    </div>
+
+  </div>
+
+  <div id="text-width-tester"></div>
+  <script src="js/prepositions.js"></script>
+  <script src="js/cliches.js"></script>
+  <!--<script src="js/adverbs.js"></script>-->
+  <script src="js/dalechallwordlist.js"></script>
+  <script src="js/countwordsworth.js"></script>
+
+</div>
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-sanitize.min.js"></script>
 <script src="js/script.min.js"></script>
@@ -249,5 +541,6 @@
       });
   });
 </script>
+
 </body>
 </html>
